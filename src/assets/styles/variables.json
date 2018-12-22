@@ -1,9 +1,12 @@
 {
-  "white": "#efeee9",
-  "beige": "#eeebdf",
-  "green": "#16c2aa",
-  "text-color": "#455a64",
-  "grey": "#373e42",
-  "light-grey": "#dfdcd5",
-  "test" : "#000"
+  "coral": "#00bfa5",
+  "coral-dark": "#009688",
+  "text": "#455a64",
+  "graphite": "#373e42",
+  "link": "#6da3bd",
+  "red": "#e44845",
+  "gray-light": "#f0efe9",
+  "gray": "#d6d6d6",
+  "gray-warm": "#EEEBDF"
 }
+ 

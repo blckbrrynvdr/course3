@@ -1,5 +1,5 @@
 .inlined-svg {
-  background: svg-load('github.svg', fill=$green) center center no-repeat;
+  background: svg-load('github.svg', fill=$graphite) center center no-repeat;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -10,5 +10,5 @@
 }
 
 .test {
-  background: $green;
+  background: $coral;
 }
