@@ -1,0 +1,69 @@
+.hero {
+    height: 600px;
+    background: url(/assets/images/backgrounds/mountains.png) center center / cover no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.triangles {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    display: flex;
+}
+// .hero__triangle {
+//     position: absolute;
+//     bottom: -1%;
+//     width: 50%;
+// }
+// .triangle-left {
+//     min-width: 100%;
+//         fill: $gray-light;
+    
+// }
+
+.hero__socials {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.hero__menu {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.hero__arrow-down {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    .hero__arrow-pic {
+        width: 26px;
+        height: 16px;
+        fill: $gray;
+    }
+}
+
+.hero__content {
+    position: relative;
+    text-align: center;
+}
+
+.hero__user-desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title-img {
+    max-width: 100%;
+    max-height: 100%;     
+    opacity: .2;
+}

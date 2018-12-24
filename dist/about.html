@@ -5,19 +5,110 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Portfolio | Обо мне</title>
-    <link rel="stylesheet" href="main.min.css">
+    <link rel="stylesheet" href="/assets/styles/main.min.css">
   </head>
   <body>
     <div class="wrapper">
       <div class="maincontent">
-        <h1>Страничка "Обо Мне"  </h1>
+        <section class="hero"> 
+          <div class="hero__socials">
+            <ul class="socials">
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hero__menu"><a class="hamburger" href="#">
+              <div class="hamburger__planks"> </div></a></div>
+          <div class="hero__content"><img class="title-img" src="/assets/images/./titles/portfolio_header.png" alt="page title"/>
+            <div class="hero__user-desc">
+              <div class="user">
+                <div class="user__pic-container">
+                  <div class="user__pic"><img class="user__pic-img" src="/assets/images/avatar.png" alt="user avatar"/>
+                  </div>
+                </div>
+                <div class="user__info">
+                  <div class="user__name">Владимир Астахов</div>
+                  <div class="user__desc">Личный сайт разработчика</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__arrow-down">
+            <svg class="hero__arrow-pic">
+              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+          <div class="triangles">
+            <div class="about__triangle about__triangle--fill-gray">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150 0,0 1000,150"></polygon>
+              </svg>
+            </div>
+            <div class="about__triangle about__triangle--fill-beige">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150  1000,150 1000,0"></polygon>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="about__col about__col--background-gray">
+            <div class="about__left-title">
+              <div class="main__title">
+                <h1>Обо мне</h1>
+              </div>
+            </div>
+            <div class="about__user-info">
+              <div class="user-info">
+                <div class="user-info__avatar"><img class="user-info__avatar-pic" src="/assets/images/avatar.png" alt="user avatar"/>
+                </div>
+                <div class="user-info__title">
+                  <h2 class="subtitle">Кто я</h2>
+                </div>
+                <div class="user-info__text text-content">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about__col about__col--background-beige"> 
+            <div class="about__left-title">
+              <div class="main__title">
+                <h2 class="subtitle">Чем я могу быть вам полезен</h2>
+              </div>
+            </div>
+            <div class="about__desc-text text-content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias reprehenderit id eaque ipsam molestias beatae harum sint amet optio mollitia, consectetur hic. Sunt velit laboriosam quam debitis nisi at nemo?</p>
+            </div>
+            <div class="about__content"></div>
+          </div>
+        </section>
       </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="/index.html">главная</a></li>
+          <li><a href="/about.html">обо мне</a></li>
+          <li><a href="/works.html">мои работы</a></li>
+          <li><a href="/blog.html">блог</a></li>
+        </ul>
+      </nav>
       <footer class="footer">
         <h2>Copyright &copy;</h2>
       </footer>
     </div>
-    <script src="bootloader.bundle.js"></script>
-    <script src="vendor.bundle.js"></script>
-    <script src="about.bundle.js"></script>
+    <script src="/assets/scripts/bootloader.bundle.js"></script>
+    <script src="/assets/scripts/vendor.bundle.js"></script>
+    <script src="/assets/scripts/about.bundle.js"></script>
   </body>
 </html>
