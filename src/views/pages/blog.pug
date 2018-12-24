@@ -4,7 +4,7 @@ block variables
   - var title = 'Блог'
 
 block content
-  section.hero 
+  section.hero.hero--blog
     //- .hero__triangle
     //-   +icon('about_bg_left', 'triangle-left')
     .hero__socials
@@ -19,18 +19,14 @@ block content
         .hamburger__planks 
 
     .hero__content
-      +image('titles/portfolio_header.png', 'page title', 'title-img')
       .hero__user-desc
         .user
           .user__pic-container
             .user__pic
               +image('avatar.png','user avatar','user__pic-img')
           .user__info
-            .user__name Владимир Астахов
-            .user__desc Личный сайт разработчика
-
-    .hero__arrow-down
-      +icon('arrow_down', 'hero__arrow-pic')
+            h1 Блог
+            .user__desc Статьи которые я ещё не написал
 
     .triangles
       .about__triangle.about__triangle--fill-gray
@@ -39,3 +35,21 @@ block content
       .about__triangle.about__triangle--fill-beige
           svg(viewbox="0 0 1000 150")
             polygon(points="0,150  1000,150 1000,0")
+
+  section.blog  
+    aside.blog__menu
+      ul.blog__menu-list
+        li.blog__menu-item.blog__menu-item--active Самое важное в SASS
+        li.blog__menu-item Приёмы в вёрстке, без которых не обходится ни один сайт
+        li.blog__menu-item Самый необходимый набор Gulp плагинов
+        li.blog__menu-item Почему я выбрал Jade
+
+    .blog__content
+      .blog__content-title
+        h3.subtitle Самое важное в SASS
+      .blog__content-date 22 ноября 2016
+      .blog__content-text 
+        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+
+        code fsgsg
