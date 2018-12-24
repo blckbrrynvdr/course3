@@ -4,4 +4,38 @@ block variables
   - var title = 'Блог'
 
 block content
-  h1 Страничка "Блог"  
+  section.hero 
+    //- .hero__triangle
+    //-   +icon('about_bg_left', 'triangle-left')
+    .hero__socials
+      ul.socials
+        each social in ['vk','github','in']
+          li.socials__item
+            a(href="#").socials__link
+              +icon(social, 'socials__icon')
+              
+    .hero__menu
+      a(href="#").hamburger
+        .hamburger__planks 
+
+    .hero__content
+      +image('titles/portfolio_header.png', 'page title', 'title-img')
+      .hero__user-desc
+        .user
+          .user__pic-container
+            .user__pic
+              +image('avatar.png','user avatar','user__pic-img')
+          .user__info
+            .user__name Владимир Астахов
+            .user__desc Личный сайт разработчика
+
+    .hero__arrow-down
+      +icon('arrow_down', 'hero__arrow-pic')
+
+    .triangles
+      .about__triangle.about__triangle--fill-gray
+            svg(viewbox="0 0 1000 150")
+              polygon(points="0,150 0,0 1000,150")
+      .about__triangle.about__triangle--fill-beige
+          svg(viewbox="0 0 1000 150")
+            polygon(points="0,150  1000,150 1000,0")

@@ -10,7 +10,57 @@
   <body>
     <div class="wrapper">
       <div class="maincontent">
-        <h1>Страничка "Блог"  </h1>
+        <section class="hero"> 
+          <div class="hero__socials">
+            <ul class="socials">
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hero__menu"><a class="hamburger" href="#">
+              <div class="hamburger__planks"> </div></a></div>
+          <div class="hero__content"><img class="title-img" src="./assets/images/titles/portfolio_header.png" alt="page title"/>
+            <div class="hero__user-desc">
+              <div class="user">
+                <div class="user__pic-container">
+                  <div class="user__pic"><img class="user__pic-img" src="./assets/images/avatar.png" alt="user avatar"/>
+                  </div>
+                </div>
+                <div class="user__info">
+                  <div class="user__name">Владимир Астахов</div>
+                  <div class="user__desc">Личный сайт разработчика</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__arrow-down">
+            <svg class="hero__arrow-pic">
+              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+          <div class="triangles">
+            <div class="about__triangle about__triangle--fill-gray">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150 0,0 1000,150"></polygon>
+              </svg>
+            </div>
+            <div class="about__triangle about__triangle--fill-beige">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150  1000,150 1000,0"></polygon>
+              </svg>
+            </div>
+          </div>
+        </section>
       </div>
       <footer class="footer">
         <div class="footer__row">
