@@ -1,8 +1,35 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('portfolio_header', 'hello-world__block')
-    .inlined-svg
-    p fgdsgsdgsdg
-    a(href="about.html") about
+
+  section.welcome
+    .welcome__panel
+      .welcome__panel-user
+        .user
+          .user__pic-container
+            .user__pic
+              +image('avatar.png','user avatar','user__pic-img')
+          .user__info
+            .user__name Владимир Астахов
+            .user__desc Личный сайт разработчика
+        ul.socials
+          each social in ['vk','github','in']
+            li.socials__item
+              a(href="#").socials__link
+                +icon(social, 'socials__icon')
+      .welcome__panel-buttons
+        a.btn.route__btn(href="works.html") Мои работы
+        a.btn.route__btn(href="about.html") Обо мне
+        a.btn.route__btn(href="blog.html") Блог
+          
+    .welcome__desc
+      p © Владимир Астахов | создано с любовью в LoftSchool | 2016
+
+    .auth
+      button.btn.auth__btn Авторизоваться
+
+  //- .hello-world
+  //-   +icon('portfolio_header', 'hello-world__block')
+  //-   .inlined-svg
+  //-   p fgdsgsdgsdg
+  //-   a(href="about.html") about

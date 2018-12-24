@@ -6,6 +6,7 @@
   "link": "#6da3bd",
   "red": "#e44845",
   "gray-light": "#f0efe9",
+  "gray-lighten": "#faf8f0",
   "gray": "#d6d6d6",
   "beige": "#EEEBDF",
   "transition": ".3s ease-out",

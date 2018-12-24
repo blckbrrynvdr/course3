@@ -4,4 +4,77 @@ block variables
   - var title = 'Мои работы'
 
 block content
-  h1 Страничка "Мои работы"  
+  section.hero 
+    //- .hero__triangle
+    //-   +icon('about_bg_left', 'triangle-left')
+    .hero__socials
+      ul.socials
+        each social in ['vk','github','in']
+          li.socials__item
+            a(href="#").socials__link
+              +icon(social, 'socials__icon')
+              
+    .hero__menu
+      a(href="#").hamburger
+        .hamburger__planks 
+
+    .hero__content
+      +image('titles/portfolio_header.png', 'page title', 'title-img')
+      .hero__user-desc
+        .user
+          .user__pic-container
+            .user__pic
+              +image('avatar.png','user avatar','user__pic-img')
+          .user__info
+            .user__name Владимир Астахов
+            .user__desc Личный сайт разработчика
+
+    .hero__arrow-down
+      +icon('arrow_down', 'hero__arrow-pic')
+
+    .triangles.triangles--works
+      .about__triangle.about__triangle--fill-gray
+            svg(viewbox="0 0 1000 150")
+              polygon(points="0,150 0,0 1000,150")
+      .about__triangle.about__triangle--fill-beige
+          svg(viewbox="0 0 1000 150")
+            polygon(points="0,150  1000,150 1000,0")
+
+  section.works 
+
+    .works__title
+      h1 Мои работы
+
+    .works__content
+      .works__col.works__col--background-gray
+        .works__left-title
+          h3.subtitle сайт школы онлайн образоваиня
+        .works__left-desc
+          p HTML, CSS, JAVASCRIP
+        .works__left-button
+          a.btn.coral__btn
+            +icon('link','works__btn-pic')
+            |Посмотреть сайт
+      .works__col.works__col--background-beige
+        .works-slider
+          .slider__image
+            +image('works.png','works school','slider__pic')
+          .slider__controls
+            .slider__controls-left
+              +image('yoga.png','works yoga','slider-controls__pic')
+            .slider__controls-right
+              +image('interiers.png','works yoga','slider-controls__pic')
+
+  section.comments  
+    .comments__title  
+      h1 Что обо мне говорят
+    .comments__content
+        .comments__left
+        .comments__left
+    .comments__form 
+      .comments__form-title
+        h3.subtitle связаться со мной
+      form.feedback
+       input(type="text", name="name", placeholder="Имя")
+       input(type="text", name="email", placeholder="Email")
+       textarea(name="message", placeholder="Ваше сообщение")

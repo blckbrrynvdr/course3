@@ -10,7 +10,107 @@
   <body>
     <div class="wrapper">
       <div class="maincontent">
-        <h1>Страничка "Мои работы"  </h1>
+        <section class="hero"> 
+          <div class="hero__socials">
+            <ul class="socials">
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hero__menu"><a class="hamburger" href="#">
+              <div class="hamburger__planks"> </div></a></div>
+          <div class="hero__content"><img class="title-img" src="./assets/images/titles/portfolio_header.png" alt="page title"/>
+            <div class="hero__user-desc">
+              <div class="user">
+                <div class="user__pic-container">
+                  <div class="user__pic"><img class="user__pic-img" src="./assets/images/avatar.png" alt="user avatar"/>
+                  </div>
+                </div>
+                <div class="user__info">
+                  <div class="user__name">Владимир Астахов</div>
+                  <div class="user__desc">Личный сайт разработчика</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__arrow-down">
+            <svg class="hero__arrow-pic">
+              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+          <div class="triangles triangles--works">
+            <div class="about__triangle about__triangle--fill-gray">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150 0,0 1000,150"></polygon>
+              </svg>
+            </div>
+            <div class="about__triangle about__triangle--fill-beige">
+              <svg viewbox="0 0 1000 150">
+                <polygon points="0,150  1000,150 1000,0"></polygon>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <section class="works"> 
+          <div class="works__title">
+            <h1>Мои работы</h1>
+          </div>
+          <div class="works__content">
+            <div class="works__col works__col--background-gray">
+              <div class="works__left-title">
+                <h3 class="subtitle">сайт школы онлайн образоваиня</h3>
+              </div>
+              <div class="works__left-desc">
+                <p>HTML, CSS, JAVASCRIP</p>
+              </div>
+              <div class="works__left-button"><a class="btn coral__btn">
+                  <svg class="works__btn-pic">
+                    <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
+                  </svg>Посмотреть сайт</a></div>
+            </div>
+            <div class="works__col works__col--background-beige">
+              <div class="works-slider">
+                <div class="slider__image"><img class="slider__pic" src="./assets/images/works.png" alt="works school"/>
+                </div>
+                <div class="slider__controls">
+                  <div class="slider__controls-left"><img class="slider-controls__pic" src="./assets/images/yoga.png" alt="works yoga"/>
+                  </div>
+                  <div class="slider__controls-right"><img class="slider-controls__pic" src="./assets/images/interiers.png" alt="works yoga"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="comments"> 
+          <div class="comments__title"> 
+            <h1>Что обо мне говорят</h1>
+          </div>
+          <div class="comments__content">
+            <div class="comments__left"></div>
+            <div class="comments__left"></div>
+          </div>
+          <div class="comments__form"> 
+            <div class="comments__form-title">
+              <h3 class="subtitle">связаться со мной</h3>
+            </div>
+            <form class="feedback">
+              <input type="text" name="name" placeholder="Имя">
+              <input type="text" name="email" placeholder="Email">
+              <textarea name="message" placeholder="Ваше сообщение"></textarea>
+            </form>
+          </div>
+        </section>
       </div>
       <footer class="footer">
         <div class="footer__row">

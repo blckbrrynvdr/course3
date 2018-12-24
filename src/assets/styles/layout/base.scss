@@ -45,7 +45,56 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+h1 {
+  font-size: 63px;
+}
+h3 {
+  font-size: 35px;
+}
+
 p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  line-height: 45px;
+  &.route__btn {
+    padding: 0 32px;
+    background: rgba($coral, .5);
+    color: #fff;
+    border-left: 1px solid rgba(#fff, .85);
+    transition: background $transition;
+    &:first-child {
+      border-left: 0;
+    }
+    &:hover,&:active,&:focus {
+      background: rgba($coral-dark, .5);
+    }
+  }
+  &.auth__btn {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 0 28px;
+    color: #fff;
+    transition: $transition;
+    &:hover,&:active,&:focus {
+      background: #fff;
+      color: $coral;
+    }
+  }
+  &.coral__btn {
+    background: $coral;
+    border-radius: 5px;
+    padding: 0 21px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
 }
