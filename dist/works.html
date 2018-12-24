@@ -97,8 +97,33 @@
             <h1>Что обо мне говорят</h1>
           </div>
           <div class="comments__content">
-            <div class="comments__left"></div>
-            <div class="comments__left"></div>
+            <div class="comments__col">
+              <div class="comments__text"> 
+                <p>Этот парень проходил обучение веб-разработке не где-то,</p>а в LoftSchool! 2 месяца только самых тяжелых испытаний 
+                и бессонных ночей!
+              </div>
+              <div class="comments__user"> 
+                <div class="comments__user-pic"><img class="user-photo" src="./assets/images/dmitriy.jpg" alt="user photo"/>
+                </div>
+                <div class="comments__user-desc">
+                  <div class="comments__user-name">Ковальчук Дмитрий</div>
+                  <div class="comments__user-proff">основатель Loftschool</div>
+                </div>
+              </div>
+            </div>
+            <div class="comments__col">
+              <div class="comments__text"> 
+                <p>Этот код выдержит любые испытания. Только пожалуйста,</p>не загружается сайт на слишком старых браузерах!
+              </div>
+              <div class="comments__user"> 
+                <div class="comments__user-pic"><img class="user-photo" src="./assets/images/vladimir.jpg" alt="user photo"/>
+                </div>
+                <div class="comments__user-desc">
+                  <div class="comments__user-name">Сабанцев Владимир</div>
+                  <div class="comments__user-proff">преподаватель</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="comments__form"> 
             <div class="comments__form-title">
@@ -108,6 +133,8 @@
               <input type="text" name="name" placeholder="Имя">
               <input type="text" name="email" placeholder="Email">
               <textarea name="message" placeholder="Ваше сообщение"></textarea>
+              <input class="btn feedback__btn" type="submit" value="Отправить">
+              <input class="btn feedback__btn" type="button" value="Очистить">
             </form>
           </div>
         </section>

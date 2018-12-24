@@ -69,12 +69,34 @@ block content
     .comments__title  
       h1 Что обо мне говорят
     .comments__content
-        .comments__left
-        .comments__left
+        .comments__col
+          .comments__text 
+            p Этот парень проходил обучение веб-разработке не где-то,
+            | а в LoftSchool! 2 месяца только самых тяжелых испытаний 
+            |и бессонных ночей!
+          .comments__user 
+            .comments__user-pic
+              +image("dmitriy.jpg", "user photo", "user-photo")
+            .comments__user-desc
+              .comments__user-name Ковальчук Дмитрий
+              .comments__user-proff основатель Loftschool
+        .comments__col
+              .comments__text 
+                p Этот код выдержит любые испытания. Только пожалуйста,
+                | не загружается сайт на слишком старых браузерах!
+              .comments__user 
+                .comments__user-pic
+                  +image("vladimir.jpg", "user photo", "user-photo")
+                .comments__user-desc
+                  .comments__user-name Сабанцев Владимир
+                  .comments__user-proff преподаватель
+        
     .comments__form 
       .comments__form-title
         h3.subtitle связаться со мной
       form.feedback
-       input(type="text", name="name", placeholder="Имя")
-       input(type="text", name="email", placeholder="Email")
-       textarea(name="message", placeholder="Ваше сообщение")
+        input(type="text", name="name", placeholder="Имя")
+        input(type="text", name="email", placeholder="Email")
+        textarea(name="message", placeholder="Ваше сообщение")
+        input.btn.feedback__btn(type="submit", value="Отправить")
+        input.btn.feedback__btn(type="button", value="Очистить")  
