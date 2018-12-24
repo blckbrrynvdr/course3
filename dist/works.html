@@ -12,16 +12,46 @@
       <div class="maincontent">
         <h1>Страничка "Мои работы"  </h1>
       </div>
-      <nav>
-        <ul class="menu">
-          <li><a href="/index.html">главная</a></li>
-          <li><a href="/about.html">обо мне</a></li>
-          <li><a href="/works.html">мои работы</a></li>
-          <li><a href="/blog.html">блог</a></li>
-        </ul>
-      </nav>
       <footer class="footer">
-        <h2>Copyright &copy;</h2>
+        <div class="footer__row">
+          <div class="footer__col">
+            <ul class="menu">
+              <li class="menu__item"><a class="menu__link">Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link">Блог</a></li>
+              <li class="menu__item"><a class="menu__link">Авторизация</a></li>
+            </ul>
+          </div>
+          <div class="footer__col footer__col--justify-end">
+            <ul class="socials socials--rounded">
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link" href="#">
+                  <svg class="socials__icon">
+                    <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__col">
+            <div class="footer__text text-content">
+              <p>
+                Я веб-разработчик из Новосибирска, и этот сайт я сделалв рамках обучения в Школе онлайн образования LoftSchool. </p>
+            </div>
+          </div>
+          <div class="footer__col footer__col--justify-end">
+            <div class="footer__text text-content">
+              <p>© Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
     <script src="./assets/scripts/bootloader.bundle.js"></script>

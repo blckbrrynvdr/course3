@@ -1,0 +1,44 @@
+.skills__item {
+    margin-bottom: 40px;
+}
+
+.skills-row__list {
+    display: flex;
+}
+
+.skills-row__item {
+    margin-right: 40px;
+}
+
+.skill,
+.skill__circles,
+.skill__circle  {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.skill__circle--under {
+    fill: $gray;
+}
+
+.skill__circle--above {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: $beige;
+}
+
+.skill__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: $coral;
+}
+
+.skills-row__title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}

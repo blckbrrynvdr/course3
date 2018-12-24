@@ -1,0 +1,34 @@
+.map {
+    height: 926px;
+    background: url(../../assets/images/backgrounds/map.png) center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map__content {
+    padding: 35px 40px;
+    background-color: rgba(#FFF, .85)
+}
+
+.contacts__title {
+    margin-bottom: 40px;
+}
+
+.contacts__item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.contacts-row__icon {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    margin-right: 10px;
+}
+
+.contacts-row__pic {
+    min-width: 100%;
+    min-height:  100%;
+    fill: $coral;
+}

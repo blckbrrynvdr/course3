@@ -20,7 +20,7 @@ block content
         .hamburger__planks 
 
     .hero__content
-      +image('./titles/portfolio_header.png', 'page title', 'title-img')
+      +image('titles/portfolio_header.png', 'page title', 'title-img')
       .hero__user-desc
         .user
           .user__pic-container
@@ -62,6 +62,35 @@ block content
       .about__desc-text.text-content
               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias reprehenderit id eaque ipsam molestias beatae harum sint amet optio mollitia, consectetur hic. Sunt velit laboriosam quam debitis nisi at nemo?
       .about__content
+        ul.skills
+          each item in ['Frontend','Backend','WorkFlow']
+            li.skills__item.skills-row
+              .skills-row__title #{item}
+              ul.skills-row__list
+                each skill in ['html','css','JavaScript']
+                  li.skills-row__item 
+                    .skill
+                      .skill__circles
+                        svg.skill__circle.skill__circle--under
+                          circle(r="65" cx="68" cy="68")
+                        svg.skill__circle.skill__circle--above
+                          circle(r="47" cx="68" cy="68")
+                      .skill__title #{skill}
+                  
+  section.map
+    #google-map
+    .map__content
+      .contacts
+        .contacts__title
+          h2.subtitle Контакты
+        ul.contacts__list
+          each contact in ['skype','envelope','phone','map_marker']
+            li.contacts__item.contacts-row  
+              .contacts-row__icon
+                +icon(contact, 'contacts-row__pic')
+              .contacts-row__title #{contact}
+                
+
 
 block scripts
   script(src='./assets/scripts/about.bundle.js')
