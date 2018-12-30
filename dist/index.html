@@ -5,17 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio | welcome page</title>
-    <link rel="stylesheet" href="main.min.css">
+    <link rel="stylesheet" href="./assets/styles/main.min.css">
   </head>
   <body>
-    <div class="hello-world">
-      <svg class="hello-world__block">
-        <use xlink:href="/assets/images/icons/sprite.svg#portfolio_header"></use>
-      </svg>
-      <div class="inlined-svg"></div>
-      <p>fgdsgsdgsdg</p>
-      <p></p>
-    </div>
-    <script src="auth.bundle.js"></script>
+    <section class="welcome">
+      <div class="welcome__panel">
+        <div class="welcome__panel-user">
+          <div class="user">
+            <div class="user__pic-container">
+              <div class="user__pic"><img class="user__pic-img" src="./assets/images/avatar.png" alt="user avatar"/>
+              </div>
+            </div>
+            <div class="user__info">
+              <div class="user__name">Владимир Астахов</div>
+              <div class="user__desc">Личный сайт разработчика</div>
+            </div>
+          </div>
+          <ul class="socials">
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="welcome__panel-buttons"><a class="btn route__btn" href="works.html">Мои работы</a><a class="btn route__btn" href="about.html">Обо мне</a><a class="btn route__btn" href="blog.html">Блог</a></div>
+      </div>
+      <div class="welcome__desc">
+        <p>© Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
+      </div>
+      <div class="auth">
+        <button class="btn auth__btn">Авторизоваться</button>
+      </div>
+    </section>
+    <script src="/assets/scripts/auth.bundle.js"></script>
   </body>
 </html>

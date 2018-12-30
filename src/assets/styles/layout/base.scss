@@ -40,9 +40,83 @@ ul {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: 0;
+  font-family: $bernier;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 63px;
+}
+h3 {
+  font-size: 35px;
 }
 
 p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.arrow_up {
+  width: 26px;
+    height: 16px;
+    transform: rotate(180deg);
+    fill: $gray-light;
+}
+
+.btn {
+  display: inline-block;
+  line-height: 45px;
+  cursor: pointer;
+  &.route__btn {
+    padding: 0 32px;
+    background: rgba($coral, .5);
+    color: #fff;
+    border-left: 1px solid rgba(#fff, .85);
+    transition: background $transition;
+    &:first-child {
+      border-left: 0;
+    }
+    &:hover,&:active,&:focus {
+      background: rgba($coral-dark, .5);
+    }
+  }
+  &.auth__btn {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 0 28px;
+    color: #fff;
+    transition: $transition;
+    &:hover,&:active,&:focus {
+      background: #fff;
+      color: $coral;
+    }
+  }
+  &.coral__btn {
+    background: $coral;
+    border-radius: 5px;
+    padding: 0 21px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  &.feedback__btn{
+    width: 50%;
+    background: rgba($coral,.6);
+    color: #fff;
+    border: 0;
+    border-left: 1px solid rgba(#fff, .85);
+    transition: background $transition;
+    &:first-child {
+      border: 0;
+    }
+    &:hover,&:active,&:focus {
+      background: rgba($coral-dark, .5);
+    }
+  }
 }

@@ -1,0 +1,28 @@
+.footer {
+    background: rgba($graphite , 0.85);
+    min-height: 150px;
+    color: #FFF;
+}
+
+.footer__row {
+    display: flex;
+    align-items: center;
+    &:first-child {
+        border-bottom: 1px solid #FFF;
+    }
+    padding: 20px;
+}
+
+.footer__col {
+    width: 50%;
+    &--justify-end {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.footer__text {
+    opacity: .5;
+    display: flex;
+    align-items: center;
+}

@@ -3,8 +3,94 @@ extends ../main.layout.pug
 block variables
   - var title = 'Обо мне'
 
-block scripts
-  script(src='about.bundle.js')
-
 block content
-  h1 Страничка "Обо Мне"  
+  
+  section.hero 
+    //- .hero__triangle
+    //-   +icon('about_bg_left', 'triangle-left')
+    .hero__socials
+      ul.socials
+        each social in ['vk','github','in']
+          li.socials__item
+            a(href="#").socials__link
+              +icon(social, 'socials__icon')
+              
+    .hero__menu
+      a(href="#").hamburger
+        .hamburger__planks 
+
+    .hero__content
+      +image('titles/portfolio_header.png', 'page title', 'title-img')
+      .hero__user-desc
+        .user
+          .user__pic-container
+            .user__pic
+              +image('avatar.png','user avatar','user__pic-img')
+          .user__info
+            .user__name Владимир Астахов
+            .user__desc Личный сайт разработчика
+
+    .hero__arrow-down
+      +icon('arrow_down', 'hero__arrow-pic')
+
+    .triangles
+      .about__triangle.about__triangle--fill-gray
+            svg(viewbox="0 0 1000 150")
+              polygon(points="0,150 0,0 1000,150")
+      .about__triangle.about__triangle--fill-beige
+          svg(viewbox="0 0 1000 150")
+            polygon(points="0,150  1000,150 1000,0")
+
+  section.about
+    .about__col.about__col--background-gray
+      .about__left-title
+        .main__title
+          h1 Обо мне
+      .about__user-info
+        .user-info
+          .user-info__avatar
+            +image('avatar.png','user avatar','user-info__avatar-pic')
+          .user-info__title
+            h2.subtitle Кто я
+          .user-info__text.text-content
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.
+    .about__col.about__col--background-beige  
+      .about__left-title
+        .main__title
+            h2.subtitle Чем я могу быть вам полезен
+      .about__desc-text.text-content
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias reprehenderit id eaque ipsam molestias beatae harum sint amet optio mollitia, consectetur hic. Sunt velit laboriosam quam debitis nisi at nemo?
+      .about__content
+        ul.skills
+          each item in ['Frontend','Backend','WorkFlow']
+            li.skills__item.skills-row
+              .skills-row__title #{item}
+              ul.skills-row__list
+                each skill in ['html','css','JavaScript']
+                  li.skills-row__item 
+                    .skill
+                      .skill__circles
+                        svg.skill__circle.skill__circle--under
+                          circle(r="65" cx="68" cy="68")
+                        svg.skill__circle.skill__circle--above
+                          circle(r="47" cx="68" cy="68")
+                      .skill__title #{skill}
+                  
+  section.map
+    #google-map
+    .map__content
+      .contacts
+        .contacts__title
+          h2.subtitle Контакты
+        ul.contacts__list
+          each contact in ['skype','envelope','phone','map_marker']
+            li.contacts__item.contacts-row  
+              .contacts-row__icon
+                +icon(contact, 'contacts-row__pic')
+              .contacts-row__title #{contact}
+                
+
+
+block scripts
+  script(src='./assets/scripts/about.bundle.js')
