@@ -30,7 +30,8 @@ block content
             .user__desc Личный сайт разработчика
 
     .hero__arrow-down
-      +icon('arrow_down', 'hero__arrow-pic')
+      a(href="#") 
+        +icon('arrow_down', 'hero__arrow-pic')
 
     .triangles.triangles--works
       .about__triangle.about__triangle--fill-gray
@@ -43,7 +44,7 @@ block content
   section.works 
 
     .works__title
-      h1 Мои работы
+      +title ('Мои работы', 'works_header')
 
     .works__content
       .works__col.works__col--background-gray
@@ -62,12 +63,16 @@ block content
           .slider__controls
             .slider__controls-left
               +image('yoga.png','works yoga','slider-controls__pic')
+              a(href="#") 
+                +icon('arrow_down','arrow_down')
             .slider__controls-right
               +image('interiers.png','works yoga','slider-controls__pic')
+              a(href="#") 
+                +icon('arrow_down','arrow_up')
 
   section.comments  
     .comments__title  
-      h1 Что обо мне говорят
+      +title ('Что обо мне говорят', 'about_header')
     .comments__content
         .comments__col
           .comments__text 
@@ -101,4 +106,5 @@ block content
         input.btn.feedback__btn(type="button", value="Очистить")  
     
     .comments__arrow
-      +icon('arrow_down', 'arrow_up')
+      a(href="#") 
+        +icon('arrow_down', 'arrow_up')

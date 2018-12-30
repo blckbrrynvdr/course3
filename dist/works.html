@@ -43,11 +43,10 @@
               </div>
             </div>
           </div>
-          <div class="hero__arrow-down">
-            <svg class="hero__arrow-pic">
-              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
-            </svg>
-          </div>
+          <div class="hero__arrow-down"><a href="#"> 
+              <svg class="hero__arrow-pic">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a></div>
           <div class="triangles triangles--works">
             <div class="about__triangle about__triangle--fill-gray">
               <svg viewbox="0 0 1000 150">
@@ -63,7 +62,12 @@
         </section>
         <section class="works"> 
           <div class="works__title">
-            <h1>Мои работы</h1>
+            <div class="main__title">
+              <h1>Мои работы</h1>
+              <svg class="title__background-image">
+                <use xlink:href="./assets/images/icons/sprite.svg#works_header"></use>
+              </svg>
+            </div>
           </div>
           <div class="works__content">
             <div class="works__col works__col--background-gray">
@@ -83,9 +87,15 @@
                 <div class="slider__image"><img class="slider__pic" src="./assets/images/works.png" alt="works school"/>
                 </div>
                 <div class="slider__controls">
-                  <div class="slider__controls-left"><img class="slider-controls__pic" src="./assets/images/yoga.png" alt="works yoga"/>
+                  <div class="slider__controls-left"><img class="slider-controls__pic" src="./assets/images/yoga.png" alt="works yoga"/><a href="#"> 
+                      <svg class="arrow_down">
+                        <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+                      </svg></a>
                   </div>
-                  <div class="slider__controls-right"><img class="slider-controls__pic" src="./assets/images/interiers.png" alt="works yoga"/>
+                  <div class="slider__controls-right"><img class="slider-controls__pic" src="./assets/images/interiers.png" alt="works yoga"/><a href="#"> 
+                      <svg class="arrow_up">
+                        <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+                      </svg></a>
                   </div>
                 </div>
               </div>
@@ -94,7 +104,12 @@
         </section>
         <section class="comments"> 
           <div class="comments__title"> 
-            <h1>Что обо мне говорят</h1>
+            <div class="main__title">
+              <h1>Что обо мне говорят</h1>
+              <svg class="title__background-image">
+                <use xlink:href="./assets/images/icons/sprite.svg#about_header"></use>
+              </svg>
+            </div>
           </div>
           <div class="comments__content">
             <div class="comments__col">
@@ -140,30 +155,29 @@
               <input class="btn feedback__btn" type="button" value="Очистить">
             </div>
           </div>
-          <div class="comments__arrow">
-            <svg class="arrow_up">
-              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
-            </svg>
-          </div>
+          <div class="comments__arrow"><a href="#"> 
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a></div>
         </section>
       </div>
       <footer class="footer">
         <div class="footer__row">
           <div class="footer__col">
             <ul class="menu">
-              <li class="menu__item"><a class="menu__link">Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link">Обо мне</a></li>
-              <li class="menu__item"><a class="menu__link">Блог</a></li>
-              <li class="menu__item"><a class="menu__link">Авторизация</a></li>
+              <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html">Авторизация</a></li>
             </ul>
           </div>
           <div class="footer__col footer__col--justify-end">
             <ul class="socials socials--rounded">
-              <li class="socials__item"><a class="socials__link" href="#">
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/ivart">
                   <svg class="socials__icon">
                     <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
                   </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="#">
+              <li class="socials__item"><a class="socials__link" href="https://github.com/blckbrrynvdr">
                   <svg class="socials__icon">
                     <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
                   </svg></a></li>

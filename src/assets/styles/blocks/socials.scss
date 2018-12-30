@@ -34,13 +34,24 @@
 
 .socials--rounded {
     .socials__item {
-        border: 1px solid #fff;
+        border: 1px solid $gray-light;
         border-radius: 100%;
+        transition: all $transition;
         .socials__link {
            .socials__icon {
+                fill: $gray-light;
                 height: 20px;
                 width: 20px;
            } 
         }
+        &:hover {
+            background: #FFF;
+            .socials__link {
+                .socials__icon {
+                    fill: $graphite;
+                }
+            }
+        }
     }
 }
+

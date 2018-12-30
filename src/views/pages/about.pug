@@ -31,7 +31,8 @@ block content
             .user__desc Личный сайт разработчика
 
     .hero__arrow-down
-      +icon('arrow_down', 'hero__arrow-pic')
+      a(href="#") 
+        +icon('arrow_down', 'hero__arrow-pic')
 
     .triangles
       .about__triangle.about__triangle--fill-gray
@@ -45,20 +46,20 @@ block content
     .about__col.about__col--background-gray
       .about__left-title
         .main__title
-          h1 Обо мне
+          +title('Обо мне', 'about_header')
       .about__user-info
         .user-info
           .user-info__avatar
             +image('avatar.png','user avatar','user-info__avatar-pic')
           .user-info__title
-            h2.subtitle Кто я
+            +subtitle('Кто я')
           .user-info__text.text-content
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.
     .about__col.about__col--background-beige  
-      .about__left-title
+      .about__left-subtitle
         .main__title
-            h2.subtitle Чем я могу быть вам полезен
+            +subtitle('Чем я могу быть вам полезен')
       .about__desc-text.text-content
               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias reprehenderit id eaque ipsam molestias beatae harum sint amet optio mollitia, consectetur hic. Sunt velit laboriosam quam debitis nisi at nemo?
       .about__content
@@ -82,15 +83,41 @@ block content
     .map__content
       .contacts
         .contacts__title
-          h2.subtitle Контакты
+          +subtitle('Контакты')
         ul.contacts__list
-          each contact in ['skype','envelope','phone','map_marker']
+          -
+            var contacts = [
+              {
+                icon:"skype",
+                desc:"cocuco4ka_grill",
+                format:"skype: "
+              },
+              {
+                icon:"envelope",
+                desc:"v8a8rt@gmail.com",
+                format:"mailto: "
+              },
+              {
+                icon:"phone",
+                desc:"+7 (920) 750-45-61",
+                format:"tel: "
+              },
+              {
+                icon:"map_marker",
+                desc:"г.Тула, ул. Фучика, д. 22 к. 1",
+                format:"#"
+              }
+            ]
+
+          each contact in contacts
             li.contacts__item.contacts-row  
               .contacts-row__icon
-                +icon(contact, 'contacts-row__pic')
-              .contacts-row__title #{contact}
+                +icon(contact.icon, 'contacts-row__pic')
+              a(href=contact.format+contact.desc).contacts-row__title #{contact.desc}
                 
 
 
 block scripts
   script(src='./assets/scripts/about.bundle.js')
+
+

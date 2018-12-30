@@ -2,15 +2,45 @@ footer.footer
   .footer__row
     .footer__col
       ul.menu
-        each menuItem in ['Мои работы','Обо мне','Блог','Авторизация',]
+        -
+          var navLinks = [
+            {
+              link:"works.html",
+              title:"Мои работы"
+            },{
+              link:"about.html",
+              title:"Обо мне"
+            },{
+              link:"blog.html",
+              title:"Блог"
+            },{
+              link:"index.html",
+              title:"Авторизация"
+            }
+          ]
+        each item in navLinks
           li.menu__item
-            a.menu__link #{menuItem}
+            a.menu__link(href=item.link) #{item.title}
     .footer__col.footer__col--justify-end
       ul.socials.socials--rounded
-        each social in ['vk','github','in']
+        -
+          var socialLinks = [
+            {
+              link:"https://vk.com/ivart",
+              title:"vk"
+            },{
+              link:"https://github.com/blckbrrynvdr",
+              title:"github"
+            },{
+              link:"#",
+              title:"in"
+            }
+          ]
+
+        each item in socialLinks
           li.socials__item
-            a(href="#").socials__link
-              +icon(social, 'socials__icon')
+            a(href=item.link).socials__link
+              +icon(item.title, 'socials__icon')
   .footer__row
     .footer__col
       .footer__text.text-content
@@ -19,3 +49,26 @@ footer.footer
     .footer__col.footer__col--justify-end
       .footer__text.text-content
         p © Владимир Астахов | создано с любовью в LoftSchool | 2016
+
+//- -
+//-   var navLinks = [
+//-     {
+//-       link:"works.html",
+//-       title:"Мои работы"
+//-     },{
+//-       link:"about.html",
+//-       title:"Обо мне"
+//-     },{
+//-       link:"blog.html",
+//-       title:"Блог"
+//-     },{
+//-       link:"index.html",
+//-       title:"Авторизация"
+//-     }
+//-   ]
+
+//- each item in navLinks
+//-   .obj
+//-     li.menu__item
+//-       a.menu__link(href=item.link) #{item.title}
+  

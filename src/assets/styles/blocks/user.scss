@@ -32,3 +32,17 @@
 .user__desc {
     font-weight: 300;
 }
+
+.user__info {
+    .main__title {
+        h1 {
+            &:before, &:after {
+                background: #fff;
+                opacity: .3;
+            }
+        }
+    }
+    .title__background-image {
+        opacity: .15;
+    }
+}
