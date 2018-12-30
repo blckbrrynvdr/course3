@@ -21,11 +21,22 @@
     flex: 1;
     margin-right: 37px;
     max-width: 430px;
+    position: relative;
+}
+
+.comments__col:before {
+    content: "\201c";
+    font-size: 7rem;
+    position: absolute;
+    top: -77px;
+    font-family: bernier;
+    opacity: .2;
 }
 
 .comments__text {
     margin-bottom: 27px;
 }
+
 
 .comments__user {
     display: flex;
