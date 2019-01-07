@@ -1,6 +1,7 @@
 .hero.hero--blog {
     height: 400px;
     margin-bottom: 66px;
+    background-position-y: 25%;
     .hero__socials {
         left: 20%;
         top: 5%;
@@ -8,10 +9,6 @@
     .hero__menu {
         right: 20%;
         top: 5%;
-    }
-    .about__triangle--fill-gray,
-    .about__triangle--fill-beige {
-        fill: #FFF;
     }
 }
 

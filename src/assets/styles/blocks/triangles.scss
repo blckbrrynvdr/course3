@@ -1,0 +1,59 @@
+.triangles {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.triangle {
+    width: 100%;
+    height: 0;
+    position: relative;
+}
+
+.triangle--left {
+    background: $gray-lighten;
+}
+  
+.triangle--left::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top right, $gray-lighten 0%, $gray-lighten 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
+    position: absolute;
+    top: -100px;
+}
+  
+.triangle--right {
+    background: $gray-lighten;
+}
+  
+.triangle--right::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top left, $gray-lighten 0%, $gray-lighten 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);;
+    position: absolute;
+    top: -100px;
+}
+
+.triangles--about {
+  .triangle--left::before {
+    background-image: linear-gradient(to top right, $gray-light 0%, $gray-light 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
+  }
+  .triangle--right::before {
+    background-image: linear-gradient(to top left, $beige 0%, $beige 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
+  }
+}
+
+.triangles--blog {
+  .triangle--left::before {
+    background-image: linear-gradient(to top right, #FFF 0%, #FFF 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
+  }
+  .triangle--right::before {
+    background-image: linear-gradient(to top left, #FFF 0%, #FFF 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
+  }
+}

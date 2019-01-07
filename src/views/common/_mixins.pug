@@ -15,3 +15,7 @@ mixin subtitle(subtitleName, subtitleClass)
   .main__subtitle
     h3(class=`${subtitleClass}`) #{subtitleName}
   
+mixin triangle(className)
+  .triangles(class=`${className}`)
+    .triangle.triangle--left
+    .triangle.triangle--right

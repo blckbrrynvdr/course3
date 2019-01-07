@@ -5,8 +5,6 @@ block variables
 
 block content
   section.hero.hero--blog
-    //- .hero__triangle
-    //-   +icon('about_bg_left', 'triangle-left')
     .hero__socials
       ul.socials
         each social in ['vk','github','in']
@@ -28,13 +26,7 @@ block content
             +title('Блог','blog_header')
             .user__desc Статьи которые я ещё не написал
 
-    .triangles
-      .about__triangle.about__triangle--fill-gray
-            svg(viewbox="0 0 1000 150")
-              polygon(points="0,150 0,0 1000,150")
-      .about__triangle.about__triangle--fill-beige
-          svg(viewbox="0 0 1000 150")
-            polygon(points="0,150  1000,150 1000,0")
+    +triangle('triangles--blog')
 
   section.blog  
     aside.blog__menu
