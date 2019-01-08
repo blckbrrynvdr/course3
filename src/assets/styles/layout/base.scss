@@ -47,9 +47,74 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 63px;
+  position: relative;
+  padding: 0 40px;
+  z-index: 2;
+  &:before {
+    content: "";
+    width: 20px;
+    height: 6px;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    background: $text;
+    opacity: .2;
+  }
+  &:after {
+    content: "";
+    width: 20px;
+    height: 6px;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    background: $text;
+    opacity: .2;
+  }
 }
+
+.title__background-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  fill: $gray;
+  z-index: 1;
+  min-width: 100%;
+  opacity: 0.4;
+}
+
 h3 {
   font-size: 35px;
+  position: relative;
+  padding: 0 40px;
+  z-index: 2;
+  &:before {
+    content: "";
+    width: 20px;
+    height: 6px;
+    position: absolute;
+    left: 0;
+    top: 22px;
+    background: $text;
+    opacity: .2;
+  }
+  &:after {
+    content: "";
+    width: 20px;
+    height: 6px;
+    position: absolute;
+    right: 0;
+    top: 22px;
+    background: $text;
+    opacity: .2;
+  }
+}
+
+h3.subtitle {
+  padding: 0;
+  &:before,&:after {
+    display: none;
+  }
 }
 
 p {
@@ -61,12 +126,24 @@ a {
   text-decoration: none;
 }
 
+.main__title {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.main__subtitle {
+  display: flex;
+  justify-content: center;
+}
+
 .arrow_up {
-  width: 26px;
+    width: 26px;
     height: 16px;
     transform: rotate(180deg);
     fill: $gray-light;
 }
+
 
 .btn {
   display: inline-block;
@@ -83,6 +160,7 @@ a {
     }
     &:hover,&:active,&:focus {
       background: rgba($coral-dark, .5);
+      outline: none;
     }
   }
   &.auth__btn {
@@ -95,6 +173,7 @@ a {
     &:hover,&:active,&:focus {
       background: #fff;
       color: $coral;
+      outline: none;
     }
   }
   &.coral__btn {
@@ -104,6 +183,11 @@ a {
     display: flex;
     align-items: center;
     color: #fff;
+    transition: $transition;
+    &:hover,&:active,&:focus {
+      background: $coral-dark;
+      outline: none;
+    }
   }
   &.feedback__btn{
     width: 50%;
@@ -117,6 +201,7 @@ a {
     }
     &:hover,&:active,&:focus {
       background: rgba($coral-dark, .5);
+      outline: none;
     }
   }
 }

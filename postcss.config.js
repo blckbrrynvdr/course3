@@ -18,6 +18,15 @@ module.exports = {
     }),
     require("postcss-nested"),
     require("postcss-rgb"),
+    require("postcss-pxtorem")({
+      rootValue: 16,
+      unitPrecision: 5,
+      propList: ['*'],
+      selectorBlackList: [/^html$/],
+      replace: true,
+      mediaQuery: false,
+      minPixelValue: 0
+    }),
     require("postcss-inline-svg")({
       removeFill: true,
       path: "./src/assets/images/icons"

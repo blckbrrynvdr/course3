@@ -4,3 +4,14 @@ mixin icon(iconName, iconClass)
 
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin title(titleName, titleImage)
+  .main__title
+    h1 #{titleName}
+    svg(class=`title__background-image`)
+      use(xlink:href=`./assets/images/icons/sprite.svg#${titleImage}`)
+  
+mixin subtitle(subtitleName, subtitleClass)
+  .main__subtitle
+    h3(class=`${subtitleClass}`) #{subtitleName}
+  

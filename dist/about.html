@@ -43,11 +43,10 @@
               </div>
             </div>
           </div>
-          <div class="hero__arrow-down">
-            <svg class="hero__arrow-pic">
-              <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
-            </svg>
-          </div>
+          <div class="hero__arrow-down"><a href="#"> 
+              <svg class="hero__arrow-pic">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a></div>
           <div class="triangles">
             <div class="about__triangle about__triangle--fill-gray">
               <svg viewbox="0 0 1000 150">
@@ -65,7 +64,12 @@
           <div class="about__col about__col--background-gray">
             <div class="about__left-title">
               <div class="main__title">
-                <h1>Обо мне</h1>
+                <div class="main__title">
+                  <h1>Обо мне</h1>
+                  <svg class="title__background-image">
+                    <use xlink:href="./assets/images/icons/sprite.svg#about_header"></use>
+                  </svg>
+                </div>
               </div>
             </div>
             <div class="about__user-info">
@@ -73,7 +77,9 @@
                 <div class="user-info__avatar"><img class="user-info__avatar-pic" src="./assets/images/avatar.png" alt="user avatar"/>
                 </div>
                 <div class="user-info__title">
-                  <h2 class="subtitle">Кто я</h2>
+                  <div class="main__subtitle">
+                    <h3 class="undefined">Кто я</h3>
+                  </div>
                 </div>
                 <div class="user-info__text text-content">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum deleniti perspiciatis eius voluptas, ducimus suscipit ipsam aut illo molestias provident unde debitis repudiandae facere quisquam nihil quibusdam optio voluptatem magnam.</p>
@@ -83,9 +89,11 @@
             </div>
           </div>
           <div class="about__col about__col--background-beige"> 
-            <div class="about__left-title">
+            <div class="about__left-subtitle">
               <div class="main__title">
-                <h2 class="subtitle">Чем я могу быть вам полезен</h2>
+                <div class="main__subtitle">
+                  <h3 class="undefined">Чем я могу быть вам полезен</h3>
+                </div>
               </div>
             </div>
             <div class="about__desc-text text-content">
@@ -234,7 +242,9 @@
           <div class="map__content">
             <div class="contacts">
               <div class="contacts__title">
-                <h2 class="subtitle">Контакты</h2>
+                <div class="main__subtitle">
+                  <h3 class="undefined">Контакты</h3>
+                </div>
               </div>
               <ul class="contacts__list">
                 <li class="contacts__item contacts-row"> 
@@ -242,32 +252,28 @@
                     <svg class="contacts-row__pic">
                       <use xlink:href="./assets/images/icons/sprite.svg#skype"></use>
                     </svg>
-                  </div>
-                  <div class="contacts-row__title">skype</div>
+                  </div><a class="contacts-row__title" href="skype: cocuco4ka_grill">cocuco4ka_grill</a>
                 </li>
                 <li class="contacts__item contacts-row"> 
                   <div class="contacts-row__icon">
                     <svg class="contacts-row__pic">
                       <use xlink:href="./assets/images/icons/sprite.svg#envelope"></use>
                     </svg>
-                  </div>
-                  <div class="contacts-row__title">envelope</div>
+                  </div><a class="contacts-row__title" href="mailto: v8a8rt@gmail.com">v8a8rt@gmail.com</a>
                 </li>
                 <li class="contacts__item contacts-row"> 
                   <div class="contacts-row__icon">
                     <svg class="contacts-row__pic">
                       <use xlink:href="./assets/images/icons/sprite.svg#phone"></use>
                     </svg>
-                  </div>
-                  <div class="contacts-row__title">phone</div>
+                  </div><a class="contacts-row__title" href="tel: +7 (920) 750-45-61">+7 (920) 750-45-61</a>
                 </li>
                 <li class="contacts__item contacts-row"> 
                   <div class="contacts-row__icon">
                     <svg class="contacts-row__pic">
                       <use xlink:href="./assets/images/icons/sprite.svg#map_marker"></use>
                     </svg>
-                  </div>
-                  <div class="contacts-row__title">map_marker</div>
+                  </div><a class="contacts-row__title" href="#г.Тула, ул. Фучика, д. 22 к. 1">г.Тула, ул. Фучика, д. 22 к. 1</a>
                 </li>
               </ul>
             </div>
@@ -278,19 +284,19 @@
         <div class="footer__row">
           <div class="footer__col">
             <ul class="menu">
-              <li class="menu__item"><a class="menu__link">Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link">Обо мне</a></li>
-              <li class="menu__item"><a class="menu__link">Блог</a></li>
-              <li class="menu__item"><a class="menu__link">Авторизация</a></li>
+              <li class="menu__item"><a class="menu__link" href="works.html">Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="blog.html">Блог</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html">Авторизация</a></li>
             </ul>
           </div>
           <div class="footer__col footer__col--justify-end">
             <ul class="socials socials--rounded">
-              <li class="socials__item"><a class="socials__link" href="#">
+              <li class="socials__item"><a class="socials__link" href="https://vk.com/ivart">
                   <svg class="socials__icon">
                     <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
                   </svg></a></li>
-              <li class="socials__item"><a class="socials__link" href="#">
+              <li class="socials__item"><a class="socials__link" href="https://github.com/blckbrrynvdr">
                   <svg class="socials__icon">
                     <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
                   </svg></a></li>
