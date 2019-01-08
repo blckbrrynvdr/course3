@@ -1,6 +1,10 @@
 .about {
     display: flex;
     position: relative;
+    @include tablets {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 .about__col {
@@ -8,13 +12,30 @@
     display: flex;
     padding-bottom: 3rem;
     padding-left: 3rem;
+    @include tablets {
+        width: 100%;
+        padding: 0 40px;
+    }
+    @include phones {
+        padding: 0;
+    }
     &--background{
         &-gray {
             background: $gray-light;
+            @include laptop {
+                flex-direction: column;
+                text-align: center;
+            }
         }
         &-beige {
             background: $beige;
             flex-direction: column;
+            @include tablets {
+                padding: 20px;
+            }
+            @include phones {
+                padding: 10px;
+            }
         }
     }
 }
@@ -23,27 +44,63 @@
     margin-bottom: 35px;
     min-width: 50%;
     text-align: center;
+    @include phones {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
 }
 
 .about__left-subtitle {
     margin-bottom: 35px;
     padding: 0 30%;
+    @include tablets {
+        padding: 0 160px;
+    }
+    @include phones {
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .about__desc-text {
     margin-bottom: 50px;
+    @include tablets {
+        padding: 20px 120px;
+    }
+    @include phones {
+        padding: 0;
+        text-align: left;
+    }
 }
 
 .user-info {
     padding: 1rem;
+    @include phones {
+        padding: 15px 0;
+    }
+}
+
+.user-info__text {
+    @include tablets {
+        padding: 20px 100px;
+    }
+    @include phones {
+        padding: 0 10px;
+    }
 }
 
 .user-info__title {
     margin-bottom: 40px;
+    @include phones {
+        margin-bottom: 0;
+    }
 }
 
 .user-info__avatar {
     margin-bottom: 30px;
+    @include phones {
+        margin-bottom: 10px;
+    }
 }
 
 .user-info__avatar-pic {

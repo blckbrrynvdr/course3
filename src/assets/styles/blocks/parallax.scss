@@ -1,0 +1,29 @@
+.parallax {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../../assets/images/parallax/layer_0.png);
+  @include tablets {
+    display: none;
+  }
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax__image {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  // height: auto;
+  // height: 110%;
+}

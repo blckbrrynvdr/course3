@@ -7,6 +7,9 @@
     justify-content: center;
     overflow: hidden;
     width: 100%;
+    @include phones {
+        height: 550px;
+    }
 }
 
 .hero__socials {
@@ -26,6 +29,9 @@
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+    @include phones {
+        bottom: 7%;
+    }
     .hero__arrow-pic {
         width: 26px;
         height: 16px;

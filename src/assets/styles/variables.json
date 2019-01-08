@@ -10,6 +10,10 @@
   "gray": "#d6d6d6",
   "beige": "#EEEBDF",
   "transition": ".3s ease-out",
-  "bernier": "'bernier', sans-serif"
+  "bernier": "'bernier', sans-serif",
+  "desktop": "1800px",
+  "laptop": "1366px",
+  "tablets": "768px",
+  "phones": "320px"
 }
  

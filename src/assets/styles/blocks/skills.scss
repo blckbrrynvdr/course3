@@ -3,8 +3,25 @@
     vertical-align: middle;
     margin-right: 37px;
     margin-bottom: 37px;
+    &:last-child {
+        margin-right: 0;
+    }
+    @include phones {
+        margin-right: 0;
+    }
 }
-  
+
+.skill-list__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 37px;
+    margin-bottom: 37px;
+    &:nth-child(even),&:last-child {
+        @include phones {
+            margin-right: 0;
+        }}
+}
+
 .skills-list__title {
     font-size: 28px;
     font-weight: 500;

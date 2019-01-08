@@ -1,3 +1,7 @@
+.hero__menu {
+    z-index: 5;
+}
+
 .hamburger {
     width: 30px;
     height: 35px;
@@ -30,5 +34,98 @@
 
     &:after {
         bottom: -10px;
+    }
+}
+
+
+.overlay {
+    opacity: 0;
+    transition: $transition;
+    text-align: center;
+    .overleft {
+        width: 0px;
+        background: $coral;
+        transition: $transition;
+    }
+    .overright {
+        width: 0px;
+        background: $coral;
+        transition: $transition;
+    }
+    .overlay-menu {
+        display: none;
+    }
+}
+
+.overlay--open {
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    .overleft {
+        width: 50%;
+        opacity: .8;
+    }
+    .overright {
+        width: 50%;
+        opacity: .8;
+    }
+    .overlay-menu {
+        display: block;
+    }
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.overlay-menu__item {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-menu--link {
+    color: #FFF;
+    font-size: 63px;
+    font-family: $bernier;
+    font-weight: normal;
+    position: relative;
+    padding:0 40px;
+    @include phones {
+        font-size: 35px;
+    }
+    &:before {
+        content: "";
+        width: 0px;
+        height: 6px;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        background: #FFF;
+        transition: $transition;
+      }
+      &:after {
+        content: "";
+        width: 0px;
+        height: 6px;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        background: #FFF;
+        transition: $transition;
+      }
+    &:hover {
+        &::before,&::after {
+            width: 30px;
+        }
     }
 }
