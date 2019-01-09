@@ -19,7 +19,11 @@
     &:nth-child(even),&:last-child {
         @include phones {
             margin-right: 0;
-        }}
+            display: flex;
+            min-width: 40%;
+            justify-content: center;
+        }
+    }
 }
 
 .skills-list__title {
@@ -28,11 +32,19 @@
     margin-bottom: 15px;
 }
 
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .skill {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    vertical-align: middle;
+    @include phones {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        vertical-align: middle;
+    }
 }
   
   

@@ -16,6 +16,13 @@
 	}
 }
 
+@mixin small{
+	@media (max-width: $small) {
+		@content;
+	}
+}
+
+
 body, html {
   height: 100%;
 }
@@ -140,6 +147,9 @@ h3 {
     top: 22px;
     background: $text;
     opacity: .2;
+    @include phones {
+      top: 15px;
+    }
   }
   &:after {
     content: "";
@@ -150,6 +160,9 @@ h3 {
     top: 22px;
     background: $text;
     opacity: .2;
+    @include phones {
+      top: 15px;
+    }
   }
 }
 
