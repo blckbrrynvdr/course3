@@ -3,6 +3,9 @@ extends ../auth.layout.pug
 block content
 
   section.welcome
+    .auth
+      button.btn.auth__btn Авторизоваться
+      
     .welcome__panel
       .welcome__panel-user
         .user
@@ -25,8 +28,6 @@ block content
     .welcome__desc
       p © Владимир Астахов | создано с любовью в LoftSchool | 2016
 
-    .auth
-      button.btn.auth__btn Авторизоваться
 
   .parallax
     each source in [1,2,3,4,5,6,7,8]

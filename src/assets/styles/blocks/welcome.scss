@@ -16,6 +16,7 @@
     @include phones {
         min-height: initial;
         padding: 10px;
+        justify-content: space-between;
     }
 }
 
@@ -79,6 +80,7 @@
     top: 3%;
     right: 6%;
     @include phones {
+        position: relative;
         right: initial;
     }
 }
