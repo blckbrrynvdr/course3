@@ -1,0 +1,68 @@
+.slider {
+  height: 100vh;
+  min-height: 650px;
+  background: $gray-light;
+  display: grid;
+  grid-template: 
+    "info display" 70%
+    "info btns" 30%
+    / 1fr 1fr;
+
+  @include tablets {
+    grid-template:
+      "display" 50%
+      "info" 30%
+      "btns" 20%
+      / 1fr;
+  }
+}
+
+.slider__info-container {
+  grid-area: info;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__display {
+  background: $beige;
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__buttons{
+  grid-area: btns;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.slider__button {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider__info-title {
+  margin-bottom: 40px;
+}
+
+.slider__info-skills {
+  padding: 20px 0;
+  border-top: 1px solid rgba($coral, .3);
+  border-bottom: 1px solid rgba($coral, .3);
+  text-align: center;
+  color: $coral;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.slider__big-pic {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}

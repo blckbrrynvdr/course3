@@ -65,46 +65,7 @@
           </div>
         </section>
         <section class="works"> 
-          <div class="works__title">
-            <div class="main__title">
-              <h1>Мои работы</h1>
-              <svg class="title__background-image">
-                <use xlink:href="./assets/images/icons/sprite.svg#works_header"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="works__content">
-            <div class="works__col works__col--background-gray">
-              <div class="works__left-title">
-                <h3>сайт школы онлайн образоваиня</h3>
-              </div>
-              <div class="works__left-desc">
-                <p>HTML, CSS, JAVASCRIP</p>
-              </div>
-              <div class="works__left-button"><a class="btn coral__btn">
-                  <svg class="works__btn-pic">
-                    <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
-                  </svg>Посмотреть сайт</a></div>
-            </div>
-            <div class="works__col works__col--background-beige">
-              <div class="works-slider">
-                <div class="slider__image"><img class="slider__pic" src="./assets/images/works.png" alt="works school"/>
-                </div>
-                <div class="slider__controls">
-                  <div class="slider__controls-left"><img class="slider-controls__pic" src="./assets/images/yoga.png" alt="works yoga"/><a href="#"> 
-                      <svg class="arrow_down">
-                        <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
-                      </svg></a>
-                  </div>
-                  <div class="slider__controls-right"><img class="slider-controls__pic" src="./assets/images/interiers.png" alt="works yoga"/><a href="#"> 
-                      <svg class="arrow_up">
-                        <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
-                      </svg></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="slider-component"> </div>
         </section>
         <section class="comments"> 
           <div class="comments__title"> 
@@ -230,6 +191,43 @@
             <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
           </svg>
           <div class="skill__title">{{skillTitle}}</div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-root">
+        <div class="slider"> 
+          <info :work="currentWork"></info>
+          <display :work="currentWork"></display>
+          <btns :works="works" :index="currentIndex" @slide="handleSlide"></btns>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-info">
+        <div class="slider__info-container">
+          <div class="slider__info">
+            <div class="slider__info-title">
+              <h3 class="subtitle">{{work.title}}</h3>
+              <div class="slider__info-skills">{{work.skills}}</div>
+              <div class="slider__info-button"><a class="iconed-button" :href="work.link">
+                  <div class="iconed-button__icon"><i class="fa fa-link"></i></div>
+                  <div class="iconed-button__text">Посмотреть сайт  </div></a></div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-display">
+        <div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
+      </script>
+      <script type="text/x-template" id="slider-btns">
+        <div class="slider__buttons">
+          <div class="slider__button" @click="slide('prev')">
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
+          <div class="slider__button slider__button_next" @click="slide('next')">
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
         </div>
       </script>
     </div>

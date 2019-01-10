@@ -1,149 +1,149 @@
-.works__title {
-    background: $gray-lighten;
-    padding: 70px 0;
-    @include phones {
-        padding: 20px;
-    }
-}
+// .works__title {
+//     background: $gray-lighten;
+//     padding: 70px 0;
+//     @include phones {
+//         padding: 20px;
+//     }
+// }
 
-.works__content {
-    display: flex;
-    position: relative;
-    @include tablets {
-        flex-direction: column;
-    }
-}
+// .works__content {
+//     display: flex;
+//     position: relative;
+//     @include tablets {
+//         flex-direction: column;
+//     }
+// }
 
-.works__col {
-    width: 50%;
-    min-height: 750px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    @include tablets {
-        width: 100%;
-        min-height: 350px;
-    }
-    &--background-gray {
-        background: $gray-light;
-        @include tablets {
-            position: absolute;
-            top: 46%;
-        }
-        @include phones {
-            top: 44%;
-            min-height: 280px;
-        }
-    }
-    &--background-beige {
-        background: $beige;
-    }
-}
+// .works__col {
+//     width: 50%;
+//     min-height: 750px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     overflow: hidden;
+//     @include tablets {
+//         width: 100%;
+//         min-height: 350px;
+//     }
+//     &--background-gray {
+//         background: $gray-light;
+//         @include tablets {
+//             position: absolute;
+//             top: 46%;
+//         }
+//         @include phones {
+//             top: 44%;
+//             min-height: 280px;
+//         }
+//     }
+//     &--background-beige {
+//         background: $beige;
+//     }
+// }
 
-.works__left-title {
-    padding: 0 28%;
-    margin-bottom: 38px;
-    @include phones {
-        padding: 0 20px;
-    }
-}
+// .works__left-title {
+//     padding: 0 28%;
+//     margin-bottom: 38px;
+//     @include phones {
+//         padding: 0 20px;
+//     }
+// }
 
-.works__left-desc {
-    line-height: 50px;
-    text-align: center;
-    color: $coral;
-    border-top: 1px solid $coral;
-    border-bottom: 1px solid $coral;
-    width: 60%;
-    margin-bottom: 39px;
-    @include phones {
-        width: 100%;
-    }
-    p {
-        @include phones {
-            line-height: 35px;
-            font-weight: 600;
-        }
-    }
-}
+// .works__left-desc {
+//     line-height: 50px;
+//     text-align: center;
+//     color: $coral;
+//     border-top: 1px solid $coral;
+//     border-bottom: 1px solid $coral;
+//     width: 60%;
+//     margin-bottom: 39px;
+//     @include phones {
+//         width: 100%;
+//     }
+//     p {
+//         @include phones {
+//             line-height: 35px;
+//             font-weight: 600;
+//         }
+//     }
+// }
 
-.works__btn-pic {
-    width: 20px;
-    height: 20px;
-    fill: #fff;
-    margin-right: 11px;
-}
+// .works__btn-pic {
+//     width: 20px;
+//     height: 20px;
+//     fill: #fff;
+//     margin-right: 11px;
+// }
 
-.works-slider {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding-top: 66px;
-    width: 100%;
-}
+// .works-slider {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     height: 100%;
+//     padding-top: 66px;
+//     width: 100%;
+// }
 
-.slider__pic {
-    max-width: 100%;
-    @include tablets {
-        margin-bottom: 370px;
-    }
+// .slider__pic {
+//     max-width: 100%;
+//     @include tablets {
+//         margin-bottom: 370px;
+//     }
 
-    @include phones {
-        margin-bottom: 300px;
-    }
-}
+//     @include phones {
+//         margin-bottom: 300px;
+//     }
+// }
 
-.slider__controls {
-    display: flex;
-    position: relative;
-    @include phones {
-        width: 100%;
-    }
-    &-left,&-right {
-        display: flex;
-        align-items: center;
-        position: relative;
-        @include phones {
-            width: 50%;
-            height: 100px;
-        }
-        &:before{
-            content: "";
-            background: rgba($gray, .7);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-        }
-        a {
-            z-index: 2;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            .arrow_down,.arrow_up{
-                width: 43px;
-                height: 27px;
-                fill: #fff;
-            }
-        }
-    }
-    &-right {
-        &:before {
-            background: rgba(#e3ded0, .7);
-        }
-    }
-}
+// .slider__controls {
+//     display: flex;
+//     position: relative;
+//     @include phones {
+//         width: 100%;
+//     }
+//     &-left,&-right {
+//         display: flex;
+//         align-items: center;
+//         position: relative;
+//         @include phones {
+//             width: 50%;
+//             height: 100px;
+//         }
+//         &:before{
+//             content: "";
+//             background: rgba($gray, .7);
+//             position: absolute;
+//             top: 0;
+//             bottom: 0;
+//             left: 0;
+//             right: 0;
+//             z-index: 1;
+//         }
+//         a {
+//             z-index: 2;
+//             position: absolute;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             .arrow_down,.arrow_up{
+//                 width: 43px;
+//                 height: 27px;
+//                 fill: #fff;
+//             }
+//         }
+//     }
+//     &-right {
+//         &:before {
+//             background: rgba(#e3ded0, .7);
+//         }
+//     }
+// }
 
-.slider-controls__pic {
-    min-width: 100%;
-    min-height: 100%;
-    @include phones {
-        object-fit: contain;
-    }
-}
+// .slider-controls__pic {
+//     min-width: 100%;
+//     min-height: 100%;
+//     @include phones {
+//         object-fit: contain;
+//     }
+// }

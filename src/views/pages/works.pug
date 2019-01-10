@@ -1,7 +1,9 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Мои работы'
+  - var title = 'Мои работы';
+
+block content
 
 block content
   section.hero 
@@ -32,33 +34,35 @@ block content
     +triangle('triangles--works')
 
   section.works 
-    
-    .works__title
-      +title ('Мои работы', 'works_header')
+    #slider-component 
 
-    .works__content
-      .works__col.works__col--background-gray
-        .works__left-title
-          h3 сайт школы онлайн образоваиня
-        .works__left-desc
-          p HTML, CSS, JAVASCRIP
-        .works__left-button
-          a.btn.coral__btn
-            +icon('link','works__btn-pic')
-            |Посмотреть сайт
-      .works__col.works__col--background-beige
-        .works-slider
-          .slider__image
-            +image('works.png','works school','slider__pic')
-          .slider__controls
-            .slider__controls-left
-              +image('yoga.png','works yoga','slider-controls__pic')
-              a(href="#") 
-                +icon('arrow_down','arrow_down')
-            .slider__controls-right
-              +image('interiers.png','works yoga','slider-controls__pic')
-              a(href="#") 
-                +icon('arrow_down','arrow_up')
+    
+    //- .works__title
+    //-   +title ('Мои работы', 'works_header')
+
+    //- .works__content
+    //-   .works__col.works__col--background-gray
+    //-     .works__left-title
+    //-       h3 сайт школы онлайн образоваиня
+    //-     .works__left-desc
+    //-       p HTML, CSS, JAVASCRIP
+    //-     .works__left-button
+    //-       a.btn.coral__btn
+    //-         +icon('link','works__btn-pic')
+    //-         |Посмотреть сайт
+    //-   .works__col.works__col--background-beige
+    //-     .works-slider
+    //-       .slider__image
+    //-         +image('works.png','works school','slider__pic')
+    //-       .slider__controls
+    //-         .slider__controls-left
+    //-           +image('yoga.png','works yoga','slider-controls__pic')
+    //-           a(href="#") 
+    //-             +icon('arrow_down','arrow_down')
+    //-         .slider__controls-right
+    //-           +image('interiers.png','works yoga','slider-controls__pic')
+    //-           a(href="#") 
+    //-             +icon('arrow_down','arrow_up')
 
   section.comments  
     .comments__title  
