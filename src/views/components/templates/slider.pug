@@ -16,13 +16,12 @@ script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info
       .slider__info-title
-        h3.subtitle {{work.title}}
+        h3 {{work.title}}
         .slider__info-skills {{work.skills}}
         .slider__info-button
-          a(:href="work.link").iconed-button
-            .iconed-button__icon
-              i.fa.fa-link
-            .iconed-button__text Посмотреть сайт  
+          a(:href="work.link").btn.coral__btn
+            +icon('link','works__btn-pic')
+            |Посмотреть сайт  
 
 script(type="text/x-template")#slider-display
   .slider__display
@@ -31,10 +30,14 @@ script(type="text/x-template")#slider-display
 script(type="text/x-template")#slider-btns
   .slider__buttons
     .slider__button(@click="slide('prev')")
+      a.slider__arrow.slider__arrow--prev
+        +icon('arrow_down','arrow_up')
       div.slider__button-container
         div.slider__button-img-wrap
           img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
     .slider__button.slider__button_next(@click="slide('next')")
+      a.slider__arrow.slider__arrow--next
+        +icon('arrow_down','arrow_up')
       div.slider__button-container
         div.slider__button-img-wrap
           img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic

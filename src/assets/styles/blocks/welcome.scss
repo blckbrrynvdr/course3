@@ -9,8 +9,9 @@
     position: relative;
     min-height: 650px;
     z-index: 2;
+    position: relative;
     @include tablets {
-        justify-content: flex-end;
+        justify-content: center;
         background: url(../../assets/images/backgrounds/mountains.png) center center / cover no-repeat;
     }
     @include phones {
@@ -23,13 +24,9 @@
 .welcome__panel {
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 150px;
     @include laptop {
-        margin-top: 120px;
-        margin-bottom: 90px;
     }
     @include tablets {
-        margin-bottom: 250px;
     }
     @include phones {
         margin: 30px 0;
@@ -66,11 +63,13 @@
 .welcome__desc {
     color: #fff;
     font-weight: 300;
+    position: absolute;
+    bottom: 3%;
     @include tablets {
-        padding-bottom: 25px;
     }
     @include phones {
-        padding-bottom: 0;
+        position: relative;
+        bottom: 0;
         text-align: center;
     }
 }

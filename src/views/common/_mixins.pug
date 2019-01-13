@@ -5,10 +5,10 @@ mixin icon(iconName, iconClass)
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
-mixin title(titleName, titleImage)
+mixin title(titleName, titleImage, svgClass)
   .main__title
     h1 #{titleName}
-    svg(class=`title__background-image`)
+    svg(class=`title__background-image ${svgClass}`)
       use(xlink:href=`./assets/images/icons/sprite.svg#${titleImage}`)
   
 mixin subtitle(subtitleName, subtitleClass)
@@ -22,8 +22,9 @@ mixin triangle(className)
 
 mixin burger
   .hero__menu
-    a(href="#").hamburger#open
-      .hamburger__planks
+    .hamburger.hamburger--squeeze#open
+      .hamburger-box
+        .hamburger-inner
   .overlay#overlay
     .overleft
     .overright

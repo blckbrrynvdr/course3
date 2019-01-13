@@ -27,8 +27,13 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="hero__menu"><a class="hamburger" href="#" id="open">
-              <div class="hamburger__planks"></div></a></div>
+          <div class="hero__menu">
+            <div class="hamburger hamburger--squeeze" id="open">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+          </div>
           <div class="overlay" id="overlay">
             <div class="overleft"></div>
             <div class="overright"></div>
@@ -63,6 +68,7 @@
             <div class="triangle triangle--left"></div>
             <div class="triangle triangle--right"></div>
           </div>
+          <div class="hero__bg"><img src="./assets/images/backgrounds/mountains.jpg" alt="" srcset=""></div>
         </section>
         <section class="about">
           <div class="about__col about__col--background-gray">
@@ -70,7 +76,7 @@
               <div class="main__title">
                 <div class="main__title">
                   <h1>Обо мне</h1>
-                  <svg class="title__background-image">
+                  <svg class="title__background-image undefined">
                     <use xlink:href="./assets/images/icons/sprite.svg#about_header"></use>
                   </svg>
                 </div>
@@ -229,11 +235,12 @@
         <div class="slider__info-container">
           <div class="slider__info">
             <div class="slider__info-title">
-              <h3 class="subtitle">{{work.title}}</h3>
+              <h3>{{work.title}}</h3>
               <div class="slider__info-skills">{{work.skills}}</div>
-              <div class="slider__info-button"><a class="iconed-button" :href="work.link">
-                  <div class="iconed-button__icon"><i class="fa fa-link"></i></div>
-                  <div class="iconed-button__text">Посмотреть сайт  </div></a></div>
+              <div class="slider__info-button"><a class="btn coral__btn" :href="work.link">
+                  <svg class="works__btn-pic">
+                    <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
+                  </svg>Посмотреть сайт  </a></div>
             </div>
           </div>
         </div>
@@ -243,12 +250,18 @@
       </script>
       <script type="text/x-template" id="slider-btns">
         <div class="slider__buttons">
-          <div class="slider__button" @click="slide('prev')">
+          <div class="slider__button" @click="slide('prev')"><a class="slider__arrow slider__arrow--prev">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
             <div class="slider__button-container">
               <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
             </div>
           </div>
-          <div class="slider__button slider__button_next" @click="slide('next')">
+          <div class="slider__button slider__button_next" @click="slide('next')"><a class="slider__arrow slider__arrow--next">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
             <div class="slider__button-container">
               <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
             </div>

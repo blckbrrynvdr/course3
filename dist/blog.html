@@ -27,8 +27,13 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="hero__menu"><a class="hamburger" href="#" id="open">
-              <div class="hamburger__planks"></div></a></div>
+          <div class="hero__menu">
+            <div class="hamburger hamburger--squeeze" id="open">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+          </div>
           <div class="overlay" id="overlay">
             <div class="overleft"></div>
             <div class="overright"></div>
@@ -51,7 +56,7 @@
                 <div class="user__info">
                   <div class="main__title">
                     <h1>Блог</h1>
-                    <svg class="title__background-image">
+                    <svg class="title__background-image title-img">
                       <use xlink:href="./assets/images/icons/sprite.svg#blog_header"></use>
                     </svg>
                   </div>
@@ -68,25 +73,60 @@
             <div class="triangle triangle--left"></div>
             <div class="triangle triangle--right"></div>
           </div>
+          <div class="hero__bg"><img src="./assets/images/backgrounds/mountains.jpg" alt="" srcset=""></div>
         </section>
         <section class="blog"> 
           <aside class="blog__menu">
-            <ul class="blog__menu-list">
-              <li class="blog__menu-item blog__menu-item--active">Самое важное в SASS</li>
-              <li class="blog__menu-item">Приёмы в вёрстке, без которых не обходится ни один сайт</li>
-              <li class="blog__menu-item">Самый необходимый набор Gulp плагинов</li>
-              <li class="blog__menu-item">Почему я выбрал Jade</li>
+            <div class="blog__button hidden"></div>
+            <ul class="blog__menu-list blog__menu-list--absolute">
+              <li class="blog__menu-item"><a class="blog__link" href="#" data-name="sass"> Самое важное в SASS</a></li>
+              <li class="blog__menu-item"><a class="blog__link" href="#" data-name="layout"> Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
+              <li class="blog__menu-item"><a class="blog__link" href="#" data-name="gulp"> Самый необходимый набор Gulp плагинов</a></li>
+              <li class="blog__menu-item"><a class="blog__link" href="#" data-name="pug"> Почему я выбрал Pug</a></li>
             </ul>
           </aside>
           <div class="blog__content">
-            <div class="blog__content-title">
-              <h3 class="subtitle">Самое важное в SASS</h3>
-            </div>
-            <div class="blog__content-date">22 ноября 2016</div>
-            <div class="blog__content-text"> 
-              <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
-              <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
-            </div>
+            <article class="blog__article" data-name="sass">
+              <div class="blog__content-title">
+                <h3 class="subtitle">Самое важное в SASS</h3>
+              </div>
+              <div class="blog__content-date">22 ноября 2016</div>
+              <div class="blog__content-text"> 
+                <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+              </div>
+            </article>
+            <article class="blog__article" data-name="layout">
+              <div class="blog__content-title">
+                <h3 class="subtitle">Приёмы в вёрстке, без которых не обходится ни один сайт</h3>
+              </div>
+              <div class="blog__content-date">22 ноября 2016</div>
+              <div class="blog__content-text"> 
+                <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+              </div>
+            </article>
+            <article class="blog__article" data-name="gulp">
+              <div class="blog__content-title">
+                <h3 class="subtitle">Самый необходимый набор Gulp плагинов</h3>
+              </div>
+              <div class="blog__content-date">22 ноября 2016</div>
+              <div class="blog__content-text"> 
+                <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+              </div>
+            </article>
+            <article class="blog__article" data-name="pug">
+              <div class="blog__content-title">
+                <h3 class="subtitle">Почему я выбрал Pug</h3>
+              </div>
+              <div class="blog__content-date">22 ноября 2016</div>
+              <div class="blog__content-text"> 
+                <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+                <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+              </div>
+            </article>
+            <div class="blankspace"></div>
           </div>
         </section>
       </div>
@@ -168,11 +208,12 @@
         <div class="slider__info-container">
           <div class="slider__info">
             <div class="slider__info-title">
-              <h3 class="subtitle">{{work.title}}</h3>
+              <h3>{{work.title}}</h3>
               <div class="slider__info-skills">{{work.skills}}</div>
-              <div class="slider__info-button"><a class="iconed-button" :href="work.link">
-                  <div class="iconed-button__icon"><i class="fa fa-link"></i></div>
-                  <div class="iconed-button__text">Посмотреть сайт  </div></a></div>
+              <div class="slider__info-button"><a class="btn coral__btn" :href="work.link">
+                  <svg class="works__btn-pic">
+                    <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
+                  </svg>Посмотреть сайт  </a></div>
             </div>
           </div>
         </div>
@@ -182,12 +223,18 @@
       </script>
       <script type="text/x-template" id="slider-btns">
         <div class="slider__buttons">
-          <div class="slider__button" @click="slide('prev')">
+          <div class="slider__button" @click="slide('prev')"><a class="slider__arrow slider__arrow--prev">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
             <div class="slider__button-container">
               <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
             </div>
           </div>
-          <div class="slider__button slider__button_next" @click="slide('next')">
+          <div class="slider__button slider__button_next" @click="slide('next')"><a class="slider__arrow slider__arrow--next">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
             <div class="slider__button-container">
               <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
             </div>

@@ -7,6 +7,7 @@ let menu =  (function(options) {
   let _toggleMenu = function() {
     menu.classList.toggle('overlay--open');
     body.classList.toggle('body-active-menu');
+    buttonOpen.classList.toggle('is-active');
   }
 
   let addListeners = function() {

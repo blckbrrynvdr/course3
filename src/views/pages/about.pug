@@ -1,7 +1,7 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Обо мне'
+  - var title = 'Обо мне';
 
 block content
   
@@ -31,6 +31,9 @@ block content
         +icon('arrow_down', 'hero__arrow-pic')
 
     +triangle('triangles--about')
+
+    .hero__bg
+      img(src="./assets/images/backgrounds/mountains.jpg", alt="", srcset="")
    
   section.about
     

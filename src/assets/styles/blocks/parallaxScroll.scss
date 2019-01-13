@@ -1,0 +1,46 @@
+.para {
+  height: 1000px;
+}
+
+// .parallax-scroll {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective: 100px;
+//   background: url(../../assets/images/parallax/layer_0.png);
+//   @include tablets {
+//     display: none;
+//   }
+// }
+
+// .parallax-scroll__layer {
+//   position: absolute;
+//   top: 32%;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .parallax-scroll__image {
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: 100%;
+// }
+
+// $layers: 8;
+
+// @for $layerNum from $layers through 1{
+//   .parallax-scroll__layer:nth-child(#{$layerNum}) {
+//     $currentLayer: $layers - $layerNum;
+//     $perspective: -$currentLayer * 50px;
+//     $scale: $currentLayer * 0.5 + 1;
+
+//     transform: translateZ($perspective) scale($scale);
+//   }
+// }

@@ -101,7 +101,8 @@ h1 {
     background: $text;
     opacity: .2;
     @include phones{
-      top: 25px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   &:after {
@@ -114,7 +115,8 @@ h1 {
     background: $text;
     opacity: .2;
     @include phones{
-      top: 25px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
@@ -139,7 +141,7 @@ h3 {
   padding: 0 40px;
   z-index: 2;
   @include phones {
-    font-size: 25px;
+    font-size: 21px;
   }
   &:before {
     content: "";
@@ -208,6 +210,9 @@ a {
   display: inline-block;
   line-height: 45px;
   cursor: pointer;
+  @include phones {
+    line-height: 40px;
+  }
   &.route__btn {
     padding: 0 32px;
     background: rgba($coral, .5);
@@ -272,4 +277,8 @@ a {
       outline: none;
     }
   }
+}
+
+.hidden {
+  visibility: hidden;
 }

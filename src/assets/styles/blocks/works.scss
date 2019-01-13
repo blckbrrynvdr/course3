@@ -1,10 +1,10 @@
-// .works__title {
-//     background: $gray-lighten;
-//     padding: 70px 0;
-//     @include phones {
-//         padding: 20px;
-//     }
-// }
+.works__title {
+    background: $gray-lighten;
+    padding: 70px 0;
+    @include phones {
+        padding: 20px;
+    }
+}
 
 // .works__content {
 //     display: flex;

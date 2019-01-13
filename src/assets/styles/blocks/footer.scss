@@ -9,6 +9,7 @@
     align-items: center;
     @include tablets {
         flex-direction: column;
+        text-align: center;
     }
     &:first-child {
         border-bottom: 1px solid #FFF;
