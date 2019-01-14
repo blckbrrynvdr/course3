@@ -24,6 +24,29 @@
 .welcome__panel {
     border-radius: 8px;
     overflow: hidden;
+    transition: transform 1s ease-out;
+    &--sideA {
+        .welcome__auth {
+            display: none;
+        }
+        .welcome__auth-buttons {
+            display: none;
+        }
+    }
+    &--sideB {
+        .welcome__auth {
+            display: block;
+        }
+        .welcome__auth-buttons {
+            display: flex;
+        }
+        .welcome__panel-user {
+            display: none;
+        }
+        .welcome__panel-buttons {
+            display: none;
+        }
+    }
     @include laptop {
     }
     @include tablets {
@@ -32,6 +55,10 @@
         margin: 30px 0;
 
     }
+}
+
+.none {
+    display: none;
 }
 
 .welcome__panel-user {
@@ -81,5 +108,34 @@
     @include phones {
         position: relative;
         right: initial;
+    }
+}
+
+.welcome__auth {
+    padding: 33px 20px;
+    background: rgba(#fff, .85);
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__form-row {
+    margin-bottom: 20px;
+    input {
+        width: 100%;
+    }
+}
+
+.welcome__auth-title {
+    margin-bottom: 40px;
+}
+
+.welcome__auth-buttons {
+    text-align: center;
+    .btn {
+        display: block;
+        width: 50%;
     }
 }

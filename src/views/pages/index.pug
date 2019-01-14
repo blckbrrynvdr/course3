@@ -6,7 +6,7 @@ block content
     .auth
       button.btn.auth__btn Авторизоваться
       
-    .welcome__panel
+    .welcome__panel.welcome__panel--sideA
       .welcome__panel-user
         .user
           .user__pic-container
@@ -24,6 +24,21 @@ block content
         a.btn.route__btn(href="works.html") Мои работы
         a.btn.route__btn(href="about.html") Обо мне
         a.btn.route__btn(href="blog.html") Блог
+      
+      .welcome__auth
+        .welcome__auth-title
+          +subtitle('Авторизуйтесь')
+        form.auth__form
+          .auth__form-row
+            input.auth__form-login
+          .auth__form-row
+            input.auth__form-pass
+
+      .welcome__auth-buttons
+        a.btn.route__btn.auth__back(href="#") На главную
+        a.btn.route__btn(href="blog.html") Войти
+
+        
           
     .welcome__desc
       p © Владимир Астахов | создано с любовью в LoftSchool | 2016  

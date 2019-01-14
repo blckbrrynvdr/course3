@@ -4,7 +4,7 @@ const links = document.querySelectorAll(".blog__link");
 const button = document.querySelector('.blog__button');
 const menu = document.querySelector('.blog__menu');
 
-button.addEventListener('click', e => {
+button.addEventListener('click', () => {
   menu.classList.toggle('blog__menu--active')
   
 })
@@ -46,12 +46,11 @@ function fixed() {
     blogList.classList.remove("blog__menu-list--absolute");
     blogList.classList.add("blog__menu-list--fixed");
     button.classList.remove('hidden');
-
   } else {
     blogList.classList.remove("blog__menu-list--fixed");
     blogList.classList.add("blog__menu-list--absolute");
     button.classList.add('hidden');
-  };
+  }
 }
 
  function checkCurrentArticle() {
@@ -98,7 +97,7 @@ blogList.addEventListener("click", e => {
 
 fixed();
 
-window.addEventListener("scroll", e => {
+window.addEventListener("scroll", () => {
   fixed();
   checkCurrentArticle();
 });
