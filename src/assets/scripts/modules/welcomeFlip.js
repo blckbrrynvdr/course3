@@ -17,17 +17,26 @@ const sideB = {
     return {
       login: "",
       pass: "",
-      error: "вы не ввели логин!",
-      success: "вы ввели логин!"
+      errorLogin: "",
+      errorPass: "",
+      loginVerify: "true",
+      passVerify: "true"
     }
   },
   methods: {
     submit() {
       if (this.login === "") {
-        alert(this.error);
+       this.loginVerify = false;
+       this.errorLogin = "Вы не ввели логин!";
       } else {
-        alert(this.success);
+        this.loginVerify = true;
       }
+      if (this.pass === "") {
+        this.passVerify = false;
+        this.errorPass = "Вы не ввели пароль!";
+       } else {
+         this.passVerify = true;
+       }
     }
   }
 };

@@ -10,6 +10,9 @@
     min-height: 650px;
     z-index: 2;
     position: relative;
+    @include laptop {
+        min-height: initial;
+    }
     @include tablets {
         justify-content: center;
         background: url(../../assets/images/backgrounds/mountains.png) center center / cover no-repeat;

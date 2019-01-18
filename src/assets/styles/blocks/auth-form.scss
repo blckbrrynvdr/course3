@@ -125,3 +125,16 @@
   }
 }
 
+.error {
+  position: absolute;
+  background: white;
+  padding: 9px;
+  border: 1px solid red;
+  z-index: 1;
+  &--login {
+    bottom: 233px;
+  }
+  &--pass {
+    bottom: 167px;
+  }
+}

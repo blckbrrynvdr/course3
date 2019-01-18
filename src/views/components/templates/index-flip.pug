@@ -45,10 +45,12 @@ script(type="text/x-template")#side-b
         input.auth__form-input(placeholder="Логин", name="login", v-model="login")
         .auth__form-logo
           +icon('login','auth__form-pic')
+        .error.error--login(v-if="!loginVerify") {{ errorLogin }}
       label.auth__form-row
         input.auth__form-input(placeholder="Пароль", name="pass", v-model="pass")
         .auth__form-logo
           +icon('password','auth__form-pic')
+        .error.error--pass(v-if="!passVerify") {{ errorPass }}
       label.auth-form__check-label
         input.auth-form__check(type="checkbox" value="human" checked)
         .auth-form__check-block

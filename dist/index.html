@@ -170,6 +170,7 @@
                   <use xlink:href="./assets/images/icons/sprite.svg#login"></use>
                 </svg>
               </div>
+              <div class="error error--login" v-if="!loginVerify">{{ errorLogin }}</div>
             </label>
             <label class="auth__form-row">
               <input class="auth__form-input" placeholder="Пароль" name="pass" v-model="pass">
@@ -178,6 +179,7 @@
                   <use xlink:href="./assets/images/icons/sprite.svg#password"></use>
                 </svg>
               </div>
+              <div class="error error--pass" v-if="!passVerify">{{ errorPass }}</div>
             </label>
             <label class="auth-form__check-label">
               <input class="auth-form__check" type="checkbox" value="human" checked>
