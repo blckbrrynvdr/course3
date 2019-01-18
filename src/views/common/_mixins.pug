@@ -21,21 +21,18 @@ mixin triangle(className)
     .triangle.triangle--right
 
 mixin burger
-  .hero__menu
-    .hamburger.hamburger--squeeze#open
+  .hero__menu#fullscreen-menu(:class="{'hero__menu--open' : changed}")
+    .hamburger.hamburger--squeeze(@click="handleChange", :class="{'is-active' : changed}")
       .hamburger-box
         .hamburger-inner
-  .overlay#overlay
-    .overleft
-    .overright
-    nav.overlay-menu
-      ul.overlay-menu__list
-        li.overlay-menu__item
-          a(href="works.html").overlay-menu--link Мои работы 
-        li.overlay-menu__item
-          a(href="blog.html").overlay-menu--link Блог  
-        li.overlay-menu__item
-          a(href="about.html").overlay-menu--link Обо мне
-        li.overlay-menu__item
-          a(href="index.html").overlay-menu--link Авторизация  
+    .overlay
+      .overleft
+      .overright
+      nav.overlay-menu
+        ul.overlay-menu__list
+          - var menu = [["Мои работы", "works.html"], ["Обо мне", "about.html"], ["Блог", "blog.html"], ["Авторизация", "index.html"]];
+          each item in menu
+            li.overlay-menu__item
+              a(href=item[1]).overlay-menu--link #{item[0]}
+         
   

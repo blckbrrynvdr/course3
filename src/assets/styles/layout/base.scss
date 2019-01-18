@@ -215,7 +215,7 @@ a {
   }
   &.route__btn {
     padding: 0 32px;
-    background: rgba($coral, .5);
+    background: rgba($coral, .7);
     color: #fff;
     border-left: 1px solid rgba(#fff, .85);
     transition: background $transition;
@@ -232,7 +232,7 @@ a {
       border-left: 0;
     }
     &:hover,&:active,&:focus {
-      background: rgba($coral-dark, .5);
+      background: rgba($coral-dark, .7);
       outline: none;
     }
   }

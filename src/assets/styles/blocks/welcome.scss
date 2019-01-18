@@ -25,6 +25,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 1s ease-out;
+    position: relative;
     &--sideA {
         .welcome__auth {
             display: none;
@@ -53,7 +54,7 @@
     }
     @include phones {
         margin: 30px 0;
-
+        max-width: 300px;
     }
 }
 
@@ -62,10 +63,9 @@
 }
 
 .welcome__panel-user {
-    padding: 40px 66px;
+    padding: 40px 0;
     background: rgba(#fff, .85);
     @include phones {
-        padding: 30px;
     }
     .user {
         color: $text;
@@ -101,6 +101,11 @@
     }
 }
 
+.welcome__panel-buttons {
+    position: relative;
+    bottom: -40px;
+}
+
 .auth {
     position: absolute;
     top: 3%;
@@ -114,6 +119,7 @@
 .welcome__auth {
     padding: 33px 20px;
     background: rgba(#fff, .85);
+    position: relative;
 }
 
 .auth__form {
@@ -121,21 +127,28 @@
     flex-direction: column;
 }
 
-.auth__form-row {
-    margin-bottom: 20px;
-    input {
-        width: 100%;
-    }
-}
-
 .welcome__auth-title {
     margin-bottom: 40px;
 }
 
 .welcome__auth-buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
     text-align: center;
+    display: flex;
     .btn {
         display: block;
         width: 50%;
     }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s linear;
+}
+  
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    display: block !important;
 }

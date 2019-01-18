@@ -2,11 +2,15 @@ extends ../auth.layout.pug
 
 block content
 
-  section.welcome
+
+  #welcome-page-component
+
+  
+  //- section.welcome#welcome-page
     .auth
-      button.btn.auth__btn Авторизоваться
+      button.btn.auth__btn(@click="sideChange") Авторизоваться
       
-    .welcome__panel.welcome__panel--sideA
+    .welcome__panel(:class="side")
       .welcome__panel-user
         .user
           .user__pic-container
@@ -28,15 +32,33 @@ block content
       .welcome__auth
         .welcome__auth-title
           +subtitle('Авторизуйтесь')
-        form.auth__form
-          .auth__form-row
-            input.auth__form-login
-          .auth__form-row
-            input.auth__form-pass
-
-      .welcome__auth-buttons
-        a.btn.route__btn.auth__back(href="#") На главную
-        a.btn.route__btn(href="blog.html") Войти
+        form.auth__form#auth__form
+          label.auth__form-row
+            input.auth__form-input(placeholder="Логин", name="login")
+            .auth__form-logo
+              +icon('login','auth__form-pic')
+          label.auth__form-row
+            input.auth__form-input(placeholder="Пароль", name="pass")
+            .auth__form-logo
+              +icon('password','auth__form-pic')
+          label.auth-form__check-label
+            input.auth-form__check(type="checkbox" value="imahuman" checked)
+            .auth-form__check-block
+              +icon('check', 'auth-form__check-svg')
+            p Я человек
+          .auth-form__quest Вы точно не робот?
+          .auth__form-row.auth__form-row--margin-bottom
+            label.auth-form__radio-label
+              input.auth-form__radio(type="radio" name="human-check" checked value="yes")
+              .auth-form__custom-radio
+              | Да
+            label.auth-form__radio-label
+              input.auth-form__radio(type="radio" name="human-check" value="notSure")
+              .auth-form__custom-radio
+              | Не уверен
+          .welcome__auth-buttons
+            button.btn.route__btn.auth__back(@click="sideChange") На главную
+            button.btn.route__btn.auth__submit(type="submit", @click="submit") Войти
 
         
           

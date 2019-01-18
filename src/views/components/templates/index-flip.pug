@@ -1,0 +1,69 @@
+script(type="text/x-template")#welcome-page
+  .welcome
+    transition(name="fade")
+      authBtn(
+            @side-change="handleSideChange"
+            :activeSide="activeSide"
+            v-show="activeSide === 'sideA'"
+            )
+    .welcome__panel
+      transition(name="flip" mode="out-in")
+        component(:is="activeSide" @side-change="handleSideChange")
+    .welcome__desc
+      p © Владимир Астахов | создано с любовью в LoftSchool | 2016  
+
+
+script(type="text/x-template")#auth-btn
+  .auth
+    button.btn.auth__btn(@click="$emit('side-change')") Авторизоваться
+      
+script(type="text/x-template")#side-a    
+  .welcome__panel-user
+    .user
+      .user__pic-container
+        .user__pic
+          +image('avatar.png','user avatar','user__pic-img')
+      .user__info
+        .user__name Владимир Астахов
+        .user__desc Личный сайт разработчика
+    ul.socials
+      each social in ['vk','github','in']
+        li.socials__item
+          a(href="#").socials__link
+            +icon(social, 'socials__icon')
+    .welcome__panel-buttons
+      a.btn.route__btn(href="works.html") Мои работы
+      a.btn.route__btn(href="about.html") Обо мне
+      a.btn.route__btn(href="blog.html") Блог
+
+script(type="text/x-template")#side-b      
+  .welcome__auth
+    .welcome__auth-title
+      +subtitle('Авторизуйтесь')
+    form.auth__form#auth__form
+      label.auth__form-row
+        input.auth__form-input(placeholder="Логин", name="login", v-model="login")
+        .auth__form-logo
+          +icon('login','auth__form-pic')
+      label.auth__form-row
+        input.auth__form-input(placeholder="Пароль", name="pass", v-model="pass")
+        .auth__form-logo
+          +icon('password','auth__form-pic')
+      label.auth-form__check-label
+        input.auth-form__check(type="checkbox" value="human" checked)
+        .auth-form__check-block
+          +icon('check', 'auth-form__check-svg')
+        p Я человек
+      .auth-form__quest Вы точно не робот?
+      .auth__form-row.auth__form-row--margin-bottom
+        label.auth-form__radio-label
+          input.auth-form__radio(type="radio" name="human-check" checked value="yes")
+          .auth-form__custom-radio
+          | Да
+        label.auth-form__radio-label
+          input.auth-form__radio(type="radio" name="human-check" value="notSure")
+          .auth-form__custom-radio
+          | Не уверен
+      .welcome__auth-buttons
+        button.btn.route__btn.auth__back(@click.prevent="$emit('side-change')") На главную
+        button.btn.route__btn.auth__submit(type="submit", @click.prevent="submit") Войти
