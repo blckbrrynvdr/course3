@@ -127,10 +127,19 @@
 
 .error {
   position: absolute;
-  background: white;
+  background: red;
+  color: #FFF;
   padding: 9px;
   border: 1px solid red;
   z-index: 1;
+  &:before {
+    content:'';
+    position: absolute;
+    background: red;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+  }
   &--login {
     bottom: 233px;
   }
