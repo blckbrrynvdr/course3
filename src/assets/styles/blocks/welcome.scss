@@ -68,6 +68,7 @@
 .welcome__panel-user {
     padding: 40px 0;
     background: rgba(#fff, .85);
+    width: 100%;
     @include phones {
     }
     .user {
@@ -107,6 +108,7 @@
 .welcome__panel-buttons {
     position: relative;
     bottom: -40px;
+    width: 100%;
 }
 
 .auth {
