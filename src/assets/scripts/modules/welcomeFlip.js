@@ -20,23 +20,62 @@ const sideB = {
       errorLogin: "",
       errorPass: "",
       loginVerify: "true",
-      passVerify: "true"
+      passVerify: "true",
+      human: "",
+      picked: "human-no",
+      activateModal: "true",
+      humanText: ""
     }
   },
   methods: {
     submit() {
-      if (this.login === "") {
+      if (!this.login || this.login === "") {
        this.loginVerify = false;
        this.errorLogin = "Вы не ввели логин!";
       } else {
         this.loginVerify = true;
       }
-      if (this.pass === "") {
-        this.passVerify = false;
-        this.errorPass = "Вы не ввели пароль!";
-       } else {
-         this.passVerify = true;
-       }
+      if (this.loginVerify) {
+        if (this.pass === "") {
+          this.passVerify = false;
+          this.errorPass = "Вы не ввели пароль!";
+         } else {
+           this.passVerify = true;
+         }
+      }
+
+      if (this.passVerify && this.loginVerify) {
+        if (!this.human) {
+          this.activateModal = false
+          this.humanText = "роботам тут не место!"
+        }
+        if (this.picked === 'human-no') {
+             this.activateModal = false
+             this.humanText = "роботам тут не место!"
+           }
+      }
+      
+      if(
+        this.loginVerify &&
+        this.passVerify &&
+        this.picked === 'human-yes'
+      ) {
+        this.activateModal = false
+        this.humanText = "авторизация is coming"
+        this.clearSubmit();
+      }
+      
+    },
+    clearInput() {
+      this.loginVerify = true;
+      this.passVerify = true;
+    },
+    clearSubmit() {
+      this.login = '';
+      this.pass = ''
+    },
+    closeModal() {
+        this.activateModal = true;
     }
   }
 };
@@ -57,7 +96,7 @@ new Vue({
     },
     outOfForm(e) {
       if (
-        e.target.classList.contains("welcome-page") &&
+        e.target.classList.contains("welcome") &&
         this.activeSide === "sideB"
       ) {
         this.handleSideChange();
