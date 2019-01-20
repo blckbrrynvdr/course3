@@ -135,22 +135,35 @@
               </div>
             </div>
           </div>
-          <div class="comments__form"> 
+          <div class="comments__form" id="feedback-form">
             <div class="comments__form-content">
               <div class="comments__form-blur"></div>
               <div class="comments__form-title">
                 <h3>связаться со мной</h3>
               </div>
               <form class="feedback">
-                <input class="feedback__input" type="text" name="name" placeholder="Имя">
-                <input class="feedback__input" type="text" name="email" placeholder="Email">
-                <textarea class="feedback__input feedback__input--textarea" name="message" placeholder="Ваше сообщение"></textarea>
+                <input class="feedback__input" type="text" name="name" placeholder="Имя" v-model="name" @input="clearInput">
+                <transition name="fade">
+                  <div class="error error--name" v-if="!nameVerify">{{ errorName }}</div>
+                </transition>
+                <input class="feedback__input" type="text" name="email" placeholder="Email" v-model="mail" @input="clearInput">
+                <transition name="fade">
+                  <div class="error error--mail" v-if="!mailVerify">{{ errorMail }}</div>
+                </transition>
+                <textarea class="feedback__input feedback__input--textarea" name="message" placeholder="Ваше сообщение" v-model="message" @input="clearInput"></textarea>
               </form>
             </div>
             <div class="feedback__row">
-              <input class="btn feedback__btn" type="submit" value="Отправить">
-              <input class="btn feedback__btn" type="button" value="Очистить">
+              <input class="btn feedback__btn" type="submit" value="Отправить" @click.prevent="submit">
+              <input class="btn feedback__btn" type="button" value="Очистить" @click.prevent="clearSubmit">
             </div>
+            <transition name="fade">
+              <div class="modal-wrapper" v-if="!activateModal">
+                <div class="modal">{{ modalText }}
+                  <button class="close-modal" @click="closeModal">X</button>
+                </div>
+              </div>
+            </transition>
           </div>
           <div class="comments__arrow"><a href="#"> 
               <svg class="arrow_up">
@@ -376,10 +389,38 @@
           <transition name="fade">
             <div class="modal-wrapper" v-if="!activateModal">
               <div class="modal">{{ humanText }}
-                <button class="close" @click="closeModal">X</button>
+                <button class="close-modal" @click="closeModal">X</button>
               </div>
             </div>
           </transition>
+        </div>
+      </script>
+      <script type="text/x-template" id="articles">
+        <section class="blog">
+          <articles-menu :articles="articles"></articles-menu>
+          <articles-content :articles="articles"></articles-content>
+        </section>
+      </script>
+      <script type="text/x-template" id="articles-menu">
+        <aside class="blog__menu">
+          <div class="blog__button hidden"></div>
+          <ul class="blog__menu-list blog__menu-list--absolute">
+            <li class="blog__menu-item" v-for="article in articles"><a class="blog__link" href="#" :data-name="article.name">{{article.title}}</a></li>
+          </ul>
+        </aside>
+      </script>
+      <script type="text/x-template" id="articles-content">
+        <div class="blog__content">
+          <article class="blog__article" v-for="article in articles" :data-name="article.name">
+            <div class="blog__content-title">
+              <h3 class="subtitle">{{ article.title }}</h3>
+            </div>
+            <div class="blog__content-date">{{ article.date }}</div>
+            <div class="blog__content-text"> 
+              <p>{{ article.text }}</p>
+            </div>
+          </article>
+          <div class="blankspace"></div>
         </div>
       </script>
     </div>

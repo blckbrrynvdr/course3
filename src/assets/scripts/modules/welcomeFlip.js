@@ -36,7 +36,7 @@ const sideB = {
         this.loginVerify = true;
       }
       if (this.loginVerify) {
-        if (this.pass === "") {
+        if (!this.pass || this.pass === "") {
           this.passVerify = false;
           this.errorPass = "Вы не ввели пароль!";
          } else {
@@ -64,7 +64,6 @@ const sideB = {
         this.humanText = "авторизация is coming"
         this.clearSubmit();
       }
-      
     },
     clearInput() {
       this.loginVerify = true;

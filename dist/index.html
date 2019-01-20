@@ -213,10 +213,38 @@
           <transition name="fade">
             <div class="modal-wrapper" v-if="!activateModal">
               <div class="modal">{{ humanText }}
-                <button class="close" @click="closeModal">X</button>
+                <button class="close-modal" @click="closeModal">X</button>
               </div>
             </div>
           </transition>
+        </div>
+      </script>
+      <script type="text/x-template" id="articles">
+        <section class="blog">
+          <articles-menu :articles="articles"></articles-menu>
+          <articles-content :articles="articles"></articles-content>
+        </section>
+      </script>
+      <script type="text/x-template" id="articles-menu">
+        <aside class="blog__menu">
+          <div class="blog__button hidden"></div>
+          <ul class="blog__menu-list blog__menu-list--absolute">
+            <li class="blog__menu-item" v-for="article in articles"><a class="blog__link" href="#" :data-name="article.name">{{article.title}}</a></li>
+          </ul>
+        </aside>
+      </script>
+      <script type="text/x-template" id="articles-content">
+        <div class="blog__content">
+          <article class="blog__article" v-for="article in articles" :data-name="article.name">
+            <div class="blog__content-title">
+              <h3 class="subtitle">{{ article.title }}</h3>
+            </div>
+            <div class="blog__content-date">{{ article.date }}</div>
+            <div class="blog__content-text"> 
+              <p>{{ article.text }}</p>
+            </div>
+          </article>
+          <div class="blankspace"></div>
         </div>
       </script>
     </div>

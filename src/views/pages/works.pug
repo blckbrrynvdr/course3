@@ -41,32 +41,6 @@ block content
       +title ('Мои работы', 'works_header')
     #slider-component 
 
-    
-
-    //- .works__content
-    //-   .works__col.works__col--background-gray
-    //-     .works__left-title
-    //-       h3 сайт школы онлайн образоваиня
-    //-     .works__left-desc
-    //-       p HTML, CSS, JAVASCRIP
-    //-     .works__left-button
-    //-       a.btn.coral__btn
-    //-         +icon('link','works__btn-pic')
-    //-         |Посмотреть сайт
-    //-   .works__col.works__col--background-beige
-    //-     .works-slider
-    //-       .slider__image
-    //-         +image('works.png','works school','slider__pic')
-    //-       .slider__controls
-    //-         .slider__controls-left
-    //-           +image('yoga.png','works yoga','slider-controls__pic')
-    //-           a(href="#") 
-    //-             +icon('arrow_down','arrow_down')
-    //-         .slider__controls-right
-    //-           +image('interiers.png','works yoga','slider-controls__pic')
-    //-           a(href="#") 
-    //-             +icon('arrow_down','arrow_up')
-
   section.comments
     .comments__bg
       img(src="./assets/images/backgrounds/water.jpg").comments__bg-pic
@@ -92,18 +66,26 @@ block content
                   .comments__user-name Сабанцев Владимир
                   .comments__user-proff преподаватель
         
-    .comments__form 
+    .comments__form#feedback-form
       .comments__form-content
         .comments__form-blur
         .comments__form-title
           h3 связаться со мной
         form.feedback
-          input.feedback__input(type="text", name="name", placeholder="Имя")
-          input.feedback__input(type="text", name="email", placeholder="Email")
-          textarea.feedback__input.feedback__input--textarea(name="message", placeholder="Ваше сообщение")
+          input.feedback__input(type="text", name="name", placeholder="Имя",v-model="name", @input="clearInput")
+          transition(name="fade")
+            .error.error--name(v-if="!nameVerify") {{ errorName }}
+          input.feedback__input(type="text", name="email", placeholder="Email",v-model="mail", @input="clearInput")
+          transition(name="fade")
+            .error.error--mail(v-if="!mailVerify") {{ errorMail }}
+          textarea.feedback__input.feedback__input--textarea(name="message", placeholder="Ваше сообщение",v-model="message", @input="clearInput")
       .feedback__row
-        input.btn.feedback__btn(type="submit", value="Отправить")
-        input.btn.feedback__btn(type="button", value="Очистить")  
+        input.btn.feedback__btn(type="submit", value="Отправить", @click.prevent="submit")
+        input.btn.feedback__btn(type="button", value="Очистить", @click.prevent="clearSubmit")  
+      transition(name="fade")
+        .modal-wrapper(v-if="!activateModal")
+          .modal {{ modalText }}
+            button.close-modal(@click="closeModal") X
     
     .comments__arrow
       a(href="#") 

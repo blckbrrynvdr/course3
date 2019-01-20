@@ -88,7 +88,7 @@ block content
                 desc:"г.Тула, ул. Фучика, д. 22 к. 1",
                 format:"#"
               }
-            ]
+            ];
 
           each contact in contacts
             li.contacts__item.contacts-row  
@@ -99,6 +99,6 @@ block content
 
 
 block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGl7DXLDTk0t-AKck5guMAY0ZfCySW85Q&callback=initMap" async defer)
   script(src='./assets/scripts/about.bundle.js')
-
 

@@ -52,3 +52,17 @@
       height: 140px;
   }
 }
+
+.error {
+  
+  &--name{
+    top: 41%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &--mail{
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

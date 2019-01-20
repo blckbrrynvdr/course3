@@ -58,6 +58,9 @@
     @include phones {
         margin: 30px 0;
         max-width: 310px;
+        position: absolute;
+        top: 46%;
+        transform: translateY(-50%);
     }
 }
 
@@ -99,8 +102,8 @@
     @include tablets {
     }
     @include phones {
-        position: relative;
-        bottom: 0;
+        position: absolute;
+        bottom: 1%;
         text-align: center;
     }
 }
