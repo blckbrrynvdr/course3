@@ -1,8 +1,17 @@
 .menu {
     display: flex;
     color: #FFF;
+    @include tablets {
+        justify-content: center;
+    }
 }
 
 .menu__item {
     margin-right: 40px;
+    &:last-child {
+        margin-right: 0;
+    }
+    @include phones {
+        margin-right: 13px;
+    }
 }

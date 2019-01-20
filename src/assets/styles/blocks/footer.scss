@@ -7,6 +7,9 @@
 .footer__row {
     display: flex;
     align-items: center;
+    @include tablets {
+        flex-direction: column;
+    }
     &:first-child {
         border-bottom: 1px solid #FFF;
     }
@@ -15,9 +18,16 @@
 
 .footer__col {
     width: 50%;
+    @include tablets {
+        width: 100%;
+        margin-bottom: 10px;
+    }
     &--justify-end {
         display: flex;
         justify-content: flex-end;
+        @include tablets {
+            justify-content: center;
+        }
     }
 }
 
@@ -25,6 +35,9 @@
     opacity: .5;
     display: flex;
     align-items: center;
+    @include tablets {
+        justify-content: center;
+    }
 }
 
 .menu__link {

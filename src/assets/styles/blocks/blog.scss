@@ -1,17 +1,19 @@
 .hero.hero--blog {
     height: 400px;
     margin-bottom: 66px;
-    .hero__socials {
-        left: 20%;
-        top: 5%;
+    background-position-y: 25%;
+    .hero__arrow-down {
+        display: none;
+        @include tablets {
+            display: block;
+        }
     }
-    .hero__menu {
-        right: 20%;
-        top: 5%;
+    @include tablets {
+        height: 550px;
     }
-    .about__triangle--fill-gray,
-    .about__triangle--fill-beige {
-        fill: #FFF;
+    @include phones {
+        height: 550px;
+        margin-bottom: 25px;
     }
 }
 
@@ -23,6 +25,9 @@
 .blog__menu {
     min-width: 25%;
     margin-right: 116px;
+    @include tablets {
+        display: none;
+    }
 }
 
 .blog__menu-list {
@@ -46,6 +51,12 @@
 
 .blog__content {
     padding-right: 20%;
+    @include laptop {
+        padding-right: 10%;
+    }
+    @include tablets {
+        padding: 0 20px;
+    }
 }
 
 .blog__content-title {

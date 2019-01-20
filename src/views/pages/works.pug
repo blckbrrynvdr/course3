@@ -5,8 +5,6 @@ block variables
 
 block content
   section.hero 
-    //- .hero__triangle
-    //-   +icon('about_bg_left', 'triangle-left')
     .hero__socials
       ul.socials
         each social in ['vk','github','in']
@@ -14,9 +12,7 @@ block content
             a(href="#").socials__link
               +icon(social, 'socials__icon')
               
-    .hero__menu
-      a(href="#").hamburger
-        .hamburger__planks 
+    +burger 
 
     .hero__content
       +image('titles/portfolio_header.png', 'page title', 'title-img')
@@ -33,16 +29,10 @@ block content
       a(href="#") 
         +icon('arrow_down', 'hero__arrow-pic')
 
-    .triangles.triangles--works
-      .about__triangle.about__triangle--fill-gray
-            svg(viewbox="0 0 1000 150")
-              polygon(points="0,150 0,0 1000,150")
-      .about__triangle.about__triangle--fill-beige
-          svg(viewbox="0 0 1000 150")
-            polygon(points="0,150  1000,150 1000,0")
+    +triangle('triangles--works')
 
   section.works 
-
+    
     .works__title
       +title ('Мои работы', 'works_header')
 
@@ -108,3 +98,6 @@ block content
     .comments__arrow
       a(href="#") 
         +icon('arrow_down', 'arrow_up')
+
+block scripts
+  script(src='./assets/scripts/works.bundle.js')

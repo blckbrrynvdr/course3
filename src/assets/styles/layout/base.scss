@@ -1,3 +1,28 @@
+@mixin laptop{
+	@media (max-width: $laptop) {
+		@content;
+	}
+}
+
+@mixin tablets{
+	@media (max-width: $tablets) {
+		@content;
+	}
+}
+
+@mixin phones{
+	@media (max-width: $phones) {
+		@content;
+	}
+}
+
+@mixin small{
+	@media (max-width: $small) {
+		@content;
+	}
+}
+
+
 body, html {
   height: 100%;
 }
@@ -9,6 +34,19 @@ body {
   color: $text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include laptop {
+    font-size: 15px;
+  }
+  @include tablets {
+    font-size: 14px;
+  }
+  @include phones {
+    font-size: 13px;
+  }
+}
+
+.body-active-menu {
+  overflow: hidden;
 }
 
 .wrapper {
@@ -50,6 +88,9 @@ h1 {
   position: relative;
   padding: 0 40px;
   z-index: 2;
+  @include phones {
+    font-size: 40px;
+  }
   &:before {
     content: "";
     width: 20px;
@@ -59,6 +100,9 @@ h1 {
     top: 42px;
     background: $text;
     opacity: .2;
+    @include phones{
+      top: 25px;
+    }
   }
   &:after {
     content: "";
@@ -69,6 +113,9 @@ h1 {
     top: 42px;
     background: $text;
     opacity: .2;
+    @include phones{
+      top: 25px;
+    }
   }
 }
 
@@ -81,6 +128,9 @@ h1 {
   z-index: 1;
   min-width: 100%;
   opacity: 0.4;
+  @include phones {
+    min-width: 80%;
+  }
 }
 
 h3 {
@@ -88,6 +138,9 @@ h3 {
   position: relative;
   padding: 0 40px;
   z-index: 2;
+  @include phones {
+    font-size: 25px;
+  }
   &:before {
     content: "";
     width: 20px;
@@ -97,6 +150,9 @@ h3 {
     top: 22px;
     background: $text;
     opacity: .2;
+    @include phones {
+      top: 15px;
+    }
   }
   &:after {
     content: "";
@@ -107,6 +163,9 @@ h3 {
     top: 22px;
     background: $text;
     opacity: .2;
+    @include phones {
+      top: 15px;
+    }
   }
 }
 
@@ -155,6 +214,15 @@ a {
     color: #fff;
     border-left: 1px solid rgba(#fff, .85);
     transition: background $transition;
+    @include laptop {
+      padding: 0 36px;
+    }
+    @include tablets {
+      padding: 0 40px;
+    }
+    @include phones {
+      padding: 0 24px;
+    }
     &:first-child {
       border-left: 0;
     }

@@ -7,24 +7,10 @@
     justify-content: center;
     overflow: hidden;
     width: 100%;
+    @include phones {
+        height: 550px;
+    }
 }
-
-.triangles {
-    position: absolute;
-    bottom: -6px;
-    width: 100%;
-    display: flex;
-}
-// .hero__triangle {
-//     position: absolute;
-//     bottom: -1%;
-//     width: 50%;
-// }
-// .triangle-left {
-//     min-width: 100%;
-//         fill: $gray-light;
-    
-// }
 
 .hero__socials {
     position: absolute;
@@ -43,6 +29,9 @@
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+    @include phones {
+        bottom: 7%;
+    }
     .hero__arrow-pic {
         width: 26px;
         height: 16px;
