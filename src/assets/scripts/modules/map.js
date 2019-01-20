@@ -6,7 +6,7 @@ function initMap() {
     zoom:16
   })
 
-  var imageMarker = "../../assets/images/map-marker.png"
+  var imageMarker = "./assets/images/map-marker.png"
 
   var styles = [
     {
