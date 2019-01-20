@@ -10,7 +10,7 @@ script(type="text/x-template")#welcome-page
       transition(name="flip" mode="out-in")
         component(:is="activeSide" @side-change="handleSideChange")
     .welcome__desc
-      p © Владимир Астахов | создано с любовью в LoftSchool | 2016
+      p © Артур Врублевский | создано с любовью в LoftSchool | 2019
 
 script(type="text/x-template")#auth-btn
   .auth
@@ -23,7 +23,7 @@ script(type="text/x-template")#side-a
         .user__pic
           +image('avatar.png','user avatar','user__pic-img')
       .user__info
-        .user__name Владимир Астахов
+        .user__name Артур Врублевский
         .user__desc Личный сайт разработчика
     ul.socials
       each social in ['vk','github','in']
