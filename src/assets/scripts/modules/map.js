@@ -6,7 +6,7 @@ function initMap() {
     zoom:17
   })
 
-  var imageMarker = "../assets/images/map-marker.png"
+  var imageMarker = "../../assets/images/map-marker.png"
 
   var marker = new google.maps.Marker({
     position: {lat:54.205731, lng:37.696982},
