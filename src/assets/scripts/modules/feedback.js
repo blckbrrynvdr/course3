@@ -17,6 +17,8 @@ new Vue({
   },
   methods: {
     submit() {
+      const regexp = /@/
+
       if (!this.name || this.name === "") {
        this.nameVerify = false;
        this.errorName = "Вы не указали имя!";
@@ -27,7 +29,10 @@ new Vue({
         if (!this.mail || this.mail === "") {
           this.mailVerify = false;
           this.errorMail = "Вы не ввели e-mail!";
-         } else {
+         } else if (!regexp.test(this.mail)) {
+          this.errorMail = 'Некорректный email!'
+          this.mailVerify = false
+         }else{
            this.mailVerify = true;
          }
       }
