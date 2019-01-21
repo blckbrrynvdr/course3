@@ -94,7 +94,7 @@ new Vue ({
               ) {
                 const prevArticle = links[i].parentElement.previousElementSibling;
                 const nextArticle = links[i].parentElement.nextElementSibling;
-                console.log(articles[i].getBoundingClientRect().y);
+                
                 
       
                 if (prevArticle) {

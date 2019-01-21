@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from "axios";
 
 const authBtn = {
   props: {
@@ -15,8 +16,10 @@ const sideB = {
   template: "#side-b",
   data() {
     return {
-      login: "",
-      pass: "",
+      user: {
+        name: "",
+        password: "",
+      },
       errorLogin: "",
       errorPass: "",
       loginVerify: "true",
@@ -28,15 +31,35 @@ const sideB = {
     }
   },
   methods: {
+    login() {
+      axios.post("https://webdev-api.loftschool.com/login", this.user).then(response => {
+        if (response.status === 200) {
+          const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("ttl", ttl);
+          
+          console.log(response.data.token);
+          
+          window.location.href = "/admin";
+        }
+      })
+      .catch( error => {
+        if(error.response.status === 401) {
+          this.activateModal = false;
+          this.humanText = 'Неверный логин или пароль!';
+          this.clearSubmit();
+        }
+      })
+    },
     submit() {
-      if (!this.login || this.login === "") {
+      if (!this.user.name || this.user.name === "") {
        this.loginVerify = false;
        this.errorLogin = "Вы не ввели логин!";
       } else {
         this.loginVerify = true;
       }
       if (this.loginVerify) {
-        if (!this.pass || this.pass === "") {
+        if (!this.user.password || this.user.password === "") {
           this.passVerify = false;
           this.errorPass = "Вы не ввели пароль!";
          } else {
@@ -60,9 +83,11 @@ const sideB = {
         this.passVerify &&
         this.picked === 'human-yes'
       ) {
-        this.activateModal = false
-        this.humanText = "авторизация is coming"
-        this.clearSubmit();
+        this.login();
+        // this.activateModal = false
+        // this.humanText = "Вы авторизованы!"
+        // this.clearSubmit();
+
       }
     },
     clearInput() {
@@ -70,8 +95,8 @@ const sideB = {
       this.passVerify = true;
     },
     clearSubmit() {
-      this.login = '';
-      this.pass = ''
+      this.user.name = '';
+      this.user.password = ''
     },
     closeModal() {
         this.activateModal = true;

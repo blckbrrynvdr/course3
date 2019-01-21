@@ -41,13 +41,13 @@ script(type="text/x-template")#side-b
       +subtitle('Авторизуйтесь')
     form.auth__form#auth__form
       label.auth__form-row
-        input.auth__form-input(placeholder="Логин", name="login", v-model="login", @input="clearInput")
+        input.auth__form-input(placeholder="Логин", v-model="user.name", @input="clearInput")
         .auth__form-logo
           +icon('login','auth__form-pic')
         transition(name="fade")
           .error.error--login(v-if="!loginVerify") {{ errorLogin }}
       label.auth__form-row
-        input.auth__form-input(placeholder="Пароль", name="pass", v-model="pass", @input="clearInput")
+        input.auth__form-input(placeholder="Пароль", v-model="user.password", @input="clearInput")
         .auth__form-logo
           +icon('password','auth__form-pic')
         transition(name="fade")

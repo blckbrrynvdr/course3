@@ -342,7 +342,7 @@
           </div>
           <form class="auth__form" id="auth__form">
             <label class="auth__form-row">
-              <input class="auth__form-input" placeholder="Логин" name="login" v-model="login" @input="clearInput">
+              <input class="auth__form-input" placeholder="Логин" v-model="user.name" @input="clearInput">
               <div class="auth__form-logo">
                 <svg class="auth__form-pic">
                   <use xlink:href="./assets/images/icons/sprite.svg#login"></use>
@@ -353,7 +353,7 @@
               </transition>
             </label>
             <label class="auth__form-row">
-              <input class="auth__form-input" placeholder="Пароль" name="pass" v-model="pass" @input="clearInput">
+              <input class="auth__form-input" placeholder="Пароль" v-model="user.password" @input="clearInput">
               <div class="auth__form-logo">
                 <svg class="auth__form-pic">
                   <use xlink:href="./assets/images/icons/sprite.svg#password"></use>

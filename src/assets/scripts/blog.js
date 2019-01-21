@@ -5,3 +5,4 @@ document.addEventListener("DOMContentLoaded", () => {
 import "./modules/hamburgermenu";
 import "./modules/parallaxScroll";
 import "./modules/blogArticles";
+import "./modules/auth";
