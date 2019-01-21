@@ -40,7 +40,7 @@ const sideB = {
           
           console.log(response.data.token);
           
-          window.location.href = "/admin";
+          // window.location.href = "/admin";
         }
       })
       .catch( error => {

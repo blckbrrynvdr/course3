@@ -1,11 +1,17 @@
 <template lang="pug">
-  app-title
+  div
+    app-title
+    inner
 </template>
 
 <script>
+import appTitle from "./components/title";
+import inner from "./components/inner";
+
 export default {
   components: {
-    appTitle: require("./components/title").default
+    appTitle,
+    inner
   }
 };
 </script>

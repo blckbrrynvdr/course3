@@ -1,6 +1,0 @@
-{
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjY5LCJpc3MiOiJodHRwOi8vd2ViZGV2LWFwaS5sb2Z0c2Nob29sLmNvbS9sb2dpbiIsImlhdCI6MTU0ODA2Mzc0MywiZXhwIjoxNTQ4MDgxNzQzLCJuYmYiOjE1NDgwNjM3NDMsImp0aSI6IjNhdHUwMkh3TWNWWDBWaUUifQ.6WeT1b-4gLaOQvOjJEczldeZdWWYQZrNyneF0zyhUFk",
-    "ttl": 18000
-}
-
-userid:69
