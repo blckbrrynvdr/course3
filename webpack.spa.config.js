@@ -59,7 +59,8 @@ const config = {
   devServer: {
     historyApiFallback: true,
     noInfo: false,
-    overlay: true
+    overlay: true,
+    disableHostCheck: true
   },
   performance: {
     hints: false
