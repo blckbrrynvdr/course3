@@ -1,7 +1,7 @@
 <template lang="pug">
   .tabs
     ul.tabs-items
-        li.item(v-for="tab in tabs")
+        li.item( v-for="tab in tabs")
           router-link(
             :to="tab.href"
           ).link {{tab.title}}

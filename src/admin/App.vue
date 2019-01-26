@@ -3,9 +3,10 @@
     app-header
     tabs
     .content
-      blog
-      skills
-      works
+      router-view
+      //- blog
+      //- skills
+      //- works
 </template>
 
 <script>
