@@ -4,9 +4,23 @@
     tabs
     .content
       router-view
-      //- blog
-      //- skills
-      //- works
+      .user
+        form
+          input(
+            type="text"
+            placeholder="login"
+            v-model="user.name"
+            ) 
+          input(
+            type="password"
+            placeholder="password"
+            v-model="user.password"
+            )
+          button(
+            type="button"
+            @click="sendData"
+            ) Отправить
+
 </template>
 
 <script>
@@ -16,6 +30,10 @@ import blog from "./components/blog";
 import skills from "./components/skills";
 import works from "./components/works";
 
+import axios from "axios";
+import appRequests from "./requests.js";
+
+
 export default {
   components: {
     appHeader: header,
@@ -23,6 +41,38 @@ export default {
     blog,
     skills,
     works
+  },
+  data() {
+    return {
+      user: {
+        name: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    sendData() {
+      // console.log(this.user);
+      
+      axios.post("https://webdev-api.loftschool.com/login", this.user).then(
+        response => {
+          if (response.status === 200) {
+            const token = response.data.token;
+            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+            localStorage.setItem("token", token);
+            localStorage.setItem("ttl", ttl);
+            
+            console.log('успешная авторизация');
+
+            appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
+
+            
+            
+            // window.location.href = "/admin"
+          
+          }
+      })
+    }
   }
 };
 </script>
@@ -33,7 +83,7 @@ export default {
     height: 100%;
   }
   body {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
@@ -54,6 +104,12 @@ export default {
 
   * {
     box-sizing: border-box;
+  }
+  .content {
+    padding: 0 20px;
+  }
+  .content-title {
+    width: 100%;
   }
 </style>
 

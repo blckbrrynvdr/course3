@@ -1,7 +1,7 @@
 <template lang="pug">
   .tabs
     ul.tabs-items
-        li.item( v-for="tab in tabs")
+        li.item(v-for="tab in tabs")
           router-link(
             :to="tab.href"
           ).link {{tab.title}}
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
        tabs: [
-        { title: "Обо мне", href: "/" },
+        { title: "Обо мне", href: "/skills" },
         { title: "Работы", href: "/works" },
         { title: "Блог", href: "/blog" }
       ]
