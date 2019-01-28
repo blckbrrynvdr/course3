@@ -26,7 +26,7 @@
 <script>
 import header from "./components/header";
 import tabs from "./components/tabs";
-import blog from "./components/blog";
+import articles from "./components/articles";
 import skills from "./components/skills";
 import works from "./components/works";
 
@@ -38,7 +38,7 @@ export default {
   components: {
     appHeader: header,
     tabs,
-    blog,
+    articles,
     skills,
     works
   },

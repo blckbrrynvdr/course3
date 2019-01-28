@@ -12,9 +12,9 @@ export default {
   data() {
     return {
        tabs: [
-        { title: "Обо мне", href: "/skills" },
+        { title: "Обо мне", href: "/" },
         { title: "Работы", href: "/works" },
-        { title: "Блог", href: "/blog" }
+        { title: "Блог", href: "/articles" }
       ]
     }
   }

@@ -1,25 +1,30 @@
 <template lang="pug">
-  .skill(v-if="editmode === false") 
-    .skill-title {{skill.title}}
-    .skill-percent {{skill.percents}} %
-    .skill-delete
+  tr(v-if="editmode === false") 
+    td.skill-title {{skill.title}}
+    td.skill-percent {{skill.percents}} %
+    td.skill-change
+      button(
+        type="button"
+        @click="editExistedSkill(skill)"
+        ) ✎
+    td.skill-delete
       button(type="button" @click="removeSkill(skill.id)") X
     
-  .skill-add(v-else)
-    .skill-add__title
+  tr(v-else)
+    td.skill-add__title
       input(
         type="text"
         placeholder="new skill"
         v-model="newSkill.title"
       )
-    .skill-add__percent
+    td.skill-add__percent
       input(
         type="text"
         placeholder="percent"
         v-model="newSkill.percents"
       )
       span %
-    .skill-add__button
+    td.skill-add__button
       button(
         type="button"
         @click="addNewSkill(newSkill)"
@@ -54,14 +59,20 @@ export default {
   methods: {
     ...mapActions({
       addSkillAction: "skills/add",
-      removeSkill: "skills/remove"
+      removeSkill: "skills/remove",
+      editSkill: "skills/edit"
     }),
     addNewSkill(newSkill) {
       this.addSkillAction(newSkill).then(response => {
         this.newSkill.title = "";
         this.newSkill.percents = "";
-        console.log(response);
+        response;
       })
+    },
+    editExistedSkill(existedSkill) {
+      this.newSkill.title = existedSkill.title;
+      this.newSkill.percents = existedSkill.percents;
+      this.newSkill.category = existedSkill.category;
     }
     
   }
@@ -69,7 +80,30 @@ export default {
 </script>
 
 <style lang="scss">
-  .skill {
-    display: flex;
+  .skill-add__percent {
+    input {
+      width: 22px;
+    }
+  }
+  .skill-percent {
+    text-align: right;
+  }
+  .skill-change {
+    text-align: right;
+    button {
+      transform: rotateY(180deg);
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+  .skill-delete {
+    button {
+      background: none;
+      border: none;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
   }
 </style>

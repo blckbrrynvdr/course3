@@ -1,5 +1,5 @@
 script(type="text/x-template")#welcome-page
-  .welcome
+  .welcome(@click="outOfForm")
     transition(name="fade")
       authBtn(
             @side-change="handleSideChange"

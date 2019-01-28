@@ -204,5 +204,3 @@ function initMap() {
   })
 } 
 // initMap();
-
-// AIzaSyBGl7DXLDTk0t-AKck5guMAY0ZfCySW85Q

@@ -7,7 +7,12 @@ const skills = {
     loadSkills: (state, skills) => (state.skills = skills),
     addSkillAction: (state, newSkill) => state.skills.push(newSkill),
     removeSkill: (state, skillId) =>
-      (state.skills = state.skills.filter(skill => skill.id !== skillId))
+      (state.skills = state.skills.filter(skill => skill.id !== skillId)),
+    editSkill:(state, editedSkill) => {
+      state.skills = state.skills.map(skill => {
+        return skill.id === editedSkill.id ? editedSkill : skill
+      })
+    }
   },
   actions: {
     fetch({ commit }) {
@@ -39,6 +44,18 @@ const skills = {
           console.error(error);
         }
       );
+    },
+    edit({commit}, skill) {
+      const formData = new FormData();
+
+      Object.keys(skill).forEach(key => {
+        const value = skill[key];
+        formData.append(key, value);
+      })
+      
+      this.$axios.post(`/skills/${skill.id}`, formData).then(response => {
+        commit('editSkill', response.data.skill)
+      });
     }
   }
 };

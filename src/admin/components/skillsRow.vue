@@ -1,7 +1,7 @@
 <template lang="pug">
  .skills 
     .skills-title {{type.name}}
-    .skills-list
+    table.skills-list
       skill-item(
         v-for="skill in skills"
         :key="skill.id"
@@ -38,8 +38,6 @@ export default {
     margin-bottom: 40px;
   }
   .skills-list {
-    display: flex;
-    flex-direction: column;
     padding-left: 20px;
   }
 </style>

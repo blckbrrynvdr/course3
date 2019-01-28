@@ -6,12 +6,12 @@ Vue.use(VueRouter);
 
 import skills from './components/skills.vue';
 import works from './components/works.vue';
-import blog from './components/blog.vue';
+import articles from './components/articles.vue';
 
 
 const routes = [ 
   {
-    path: '/skills',
+    path: '/',
     component: skills
   },
   {
@@ -19,8 +19,8 @@ const routes = [
     component: works
   },
   {
-    path: '/blog',
-    component: blog
+    path: '/articles',
+    component: articles
   }
 ];
 const router = new VueRouter({ routes });
