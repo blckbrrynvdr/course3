@@ -210,7 +210,7 @@
         </div>
       </script>
       <script type="text/x-template" id="welcome-page">
-        <div class="welcome">
+        <div class="welcome" @click="outOfForm">
           <transition name="fade">
             <authBtn @side-change="handleSideChange" :activeSide="activeSide" v-show="activeSide === 'sideA'"></authBtn>
           </transition>
