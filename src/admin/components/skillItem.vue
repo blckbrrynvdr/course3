@@ -1,34 +1,36 @@
 <template lang="pug">
-  tr(v-if="editmode === false") 
-    td.skill-title {{skill.title}}
-    td.skill-percent {{skill.percents}} %
-    td.skill-change
-      button(
-        type="button"
-        @click="editExistedSkill(skill)"
-        ) ✎
-    td.skill-delete
-      button(type="button" @click="removeSkill(skill.id)") X
-    
-  tr(v-else)
-    td.skill-add__title
-      input(
-        type="text"
-        placeholder="new skill"
-        v-model="newSkill.title"
-      )
-    td.skill-add__percent
-      input(
-        type="text"
-        placeholder="percent"
-        v-model="newSkill.percents"
-      )
-      span %
-    td.skill-add__button
-      button(
-        type="button"
-        @click="addNewSkill(newSkill)"
-      ) Добавить
+    tr(v-if="editmode === false") 
+      td.skill-title {{skill.title}}
+      td.skill-percent {{skill.percents}} %
+      td.skill-change
+        button(
+          type="button"
+          @click="editExistedSkill(skill)"
+          ).edit-btn ✎
+      td.skill-delete
+        button(type="button" @click="removeSkill(skill.id)").delete-btn X
+      
+    tr(v-else)
+      td.skill-add__title
+        input(
+          type="text"
+          placeholder="Название"
+          v-model="newSkill.title"
+        )
+      td.skill-add__percent
+        input(
+          type="text"
+          placeholder="%"
+          v-model="newSkill.percents"
+        )
+        span %
+      td
+      td.skill-add__button
+        button(
+          type="button"
+          @click="addNewSkill(newSkill)"
+        ).green-btn Добавить
+
 </template>
 <script>
 import { mapActions } from "vuex";
@@ -80,30 +82,20 @@ export default {
 </script>
 
 <style lang="scss">
-  .skill-add__percent {
+  .skill-add__title {
+    width: 40%;
+    padding: 10px 0;
     input {
-      width: 22px;
+      width: 90%;
+    }
+  }
+  .skill-add__percent {
+    text-align: right;
+    input {
+      width: 40px;
     }
   }
   .skill-percent {
     text-align: right;
-  }
-  .skill-change {
-    text-align: right;
-    button {
-      transform: rotateY(180deg);
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-  }
-  .skill-delete {
-    button {
-      background: none;
-      border: none;
-      font-weight: bold;
-      color: red;
-      cursor: pointer;
-    }
   }
 </style>

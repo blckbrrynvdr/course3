@@ -1,36 +1,40 @@
 <template lang="pug">
   #works
-    h2.content-title Страница "Мои работы"
-      .works
-        .works__fields
-          input(type="text" placeholder="Название проекта" v-model="work.title")
-          br
-          input(type="text" placeholder="Технологии" v-model="work.techs")
-          br
-          input(type="text" placeholder="Ссылка" v-model="work.link")
-          br
-          input(type="file" @change="renderPicAndAddFile")
-          hr
-          .preview(:style="{backgroundImage: previewPic}")
-          hr
-          button(type="button" @click="editmode ? editWork(work) : addNewWork(work)" v-text="editmode ? 'изменить' : 'добавить новую'") 
-        .works__table
-          table.table
-            tr
-              td Название
-              td Технологии
-              td Ссылка
-              td Превью
-              td
-            tr(v-for="work in works")
-              td {{work.title}}
-              td {{work.techs}}
-              td {{work.link}}
-              td
-                img(:src='`https://webdev-api.loftschool.com/${work.photo}`', width="100", height="100" alt="")
-              td 
-                button(type="button" @click="removeWork(work.id)") Удалить
-                button(type="button" @click="editExistedWork(work)") Изменить
+    .works
+      h2 Страница "Мои работы"
+      .works__fields
+        h4 Добавить работу
+        input(type="text" placeholder="Название проекта" v-model="work.title")
+        input(type="text" placeholder="Технологии" v-model="work.techs")
+        input(type="text" placeholder="Ссылка" v-model="work.link")
+        label.add-picture Загрузить картинку
+          img(src="../images/admin-add-picture.png").add-picture__btn
+          input(type="file" @change="renderPicAndAddFile").input-file
+        .preview(:style="{backgroundImage: previewPic}")
+        .work__fields-button
+          button(
+            type="button"
+            @click="editmode ? editWork(work) : addNewWork(work)"
+            v-text="editmode ? 'Изменить' : 'Добавить'"
+            ).green-btn 
+    .works__table
+      h4 Последние работы
+      table.table
+        tr
+          th Название
+          th Технологии
+          th Ссылка
+          th Превью
+          th
+        tr(v-for="work in works")
+          td {{work.title}}
+          td {{work.techs}}
+          td {{work.link}}
+          td
+            img(:src='`https://webdev-api.loftschool.com/${work.photo}`', width="100", height="100" alt="")
+          td 
+            button(type="button" @click="removeWork(work.id)").delete-btn X
+            button(type="button" @click="editExistedWork(work)").edit-btn ✎
         
 </template>
 
@@ -176,23 +180,101 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.preview {
-  width: 200px;
-  height: 200px;
-  background: center center / contain no-repeat;
-}
-.works {
-  display: flex;
-}
-.works__table {
-  width: 100%;
-}
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  td {
-    border: 1px solid black;
+  #works {
+    display: flex;
   }
-}
+  .preview {
+    width: 200px;
+    height: 200px;
+    background: center center / contain no-repeat;
+  }
+  .add-picture {
+    position: relative;
+    padding-left: 40px;
+    color: $coral;
+  }
+  .add-picture__btn {
+    position: absolute;
+    left: 0;
+  }
+  .works {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-right: 150px;
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+  .works__fields {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 70%;
+      margin-bottom: 20px;
+    }
+  }
+  .preview {
+    background-size: 50%;
+  }
+  .input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .works__table {
+    width: 50%;
+  }
+  .table {
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+    th {
+    background: #FFF;
+    color: black;
+    padding: 10px 20px;
+    }
+    tr:nth-child(even) {
+      background: #E8E6D1;
+    }
+    tr:nth-child(odd) {
+      background: white;
+    }
+    th:first-child, td:first-child {
+    text-align: left;
+    }
+    th:first-child {
+    border-top-left-radius: 10px;
+    }
+    th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+    }
+    td {
+    padding: 10px 20px;
+    background: #FFF;
+    }
+    tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+    }
+    tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+    }
+    tr td:last-child {
+    border-right: none;
+    }
+    // width: 100%;
+    // border-collapse: collapse;
+    // border-spacing: 0;
+    // td {
+    //   border: 1px solid black;
+    // }
+  }
 </style>

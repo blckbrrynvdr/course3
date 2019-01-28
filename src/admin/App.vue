@@ -1,5 +1,5 @@
 <template lang="pug">
-  .wrapper
+  .container
     app-header
     tabs
     .content
@@ -87,11 +87,9 @@ export default {
     font-size: 16px;
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
-
   }
-
-  .wrapper {
-    height: 100%;
+  h1,h2,h3,h4 {
+    margin: 0;
   }
 
   ul {
@@ -105,11 +103,53 @@ export default {
   * {
     box-sizing: border-box;
   }
+
+  input {
+    border: 0;
+    border-radius: 6px;
+    line-height: 40px;
+    padding: 0 10px;
+  }
+
+  table {
+    border-spacing: 0 10px;
+    
+  }
+
+  .wrapper {
+    height: 100%;
+    overflow: hidden;
+  }
+  .container {
+    height: 100%;
+    background: url(./images/admin-bg.png) center center/cover no-repeat;
+  }
   .content {
     padding: 0 20px;
   }
   .content-title {
     width: 100%;
+  }
+  .green-btn {
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: $coral;
+    border-radius: 6px;
+    border: 0;
+    color: #fff;
+  }
+  .edit-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+  .delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: red;
   }
 </style>
 

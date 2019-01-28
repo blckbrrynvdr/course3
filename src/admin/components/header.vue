@@ -13,6 +13,7 @@
     padding: 0 20px;
     background-color: $coral;
     color: #FFF;
+    min-height: 80px;
   }
 
 </style>

@@ -39,5 +39,7 @@ export default {
   }
   .skills-list {
     padding-left: 20px;
+    margin-right: 120px;
+    margin-bottom: 35px;
   }
 </style>

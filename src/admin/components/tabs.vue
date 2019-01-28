@@ -26,6 +26,7 @@ export default {
   .tabs {
     background: $gray-light;
     height: 60px;
+    margin-bottom: 50px;
   }
   .tabs-items {
     display: flex;
