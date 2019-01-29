@@ -32,6 +32,7 @@ import works from "./components/works";
 
 import axios from "axios";
 import appRequests from "./requests.js";
+import { mapMutations } from 'vuex';
 
 
 export default {
@@ -51,6 +52,9 @@ export default {
     };
   },
   methods: {
+    ...mapMutations({
+      authorize: 'user/authorize'
+    }),
     sendData() {
       // console.log(this.user);
       
@@ -65,6 +69,7 @@ export default {
             console.log('успешная авторизация');
 
             appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
+            this.authorize();
 
             
             

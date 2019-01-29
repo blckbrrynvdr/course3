@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import axios from "axios";
+import store from "./store";
 
 Vue.use(VueRouter);
 
@@ -24,5 +25,32 @@ const routes = [
   }
 ];
 const router = new VueRouter({ routes });
+const guard = axios.create({
+  baseURL: "http://localhost:8080"
+})
+
+router.beforeEach((to,from,next) => {
+
+  const isUserAuthorized = store.state.user.isAuth;
+
+  
+if (isUserAuthorized === false) {
+  guard.get('/user', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  }).then(response => {
+    next();
+  }).catch(error => {
+    alert('Вы не авторизованны!')
+    // window.location.href = '/course3/dist';
+    localStorage.removeItem('token');
+
+  })
+} else {
+  next();
+}
+  
+})
 
 export default router;
