@@ -72,9 +72,13 @@ export default {
       })
     },
     editExistedSkill(existedSkill) {
+      this.editSkill(this.newSkill).then(response => {
       this.newSkill.title = existedSkill.title;
       this.newSkill.percents = existedSkill.percents;
       this.newSkill.category = existedSkill.category;
+      response;
+      })
+      
     }
     
   }

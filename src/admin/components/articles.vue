@@ -52,13 +52,14 @@ export default {
   },
   created() {
     this.fetchArticles();
+    
   },
   methods: {
     ...mapActions({
       addNewArticle: 'articles/add',
       fetchArticles: 'articles/fetch',
       removeArticle: "articles/remove",
-      editArticle: 'articles/edit'
+      editArticleAction: 'articles/edit'
     }),
     editExistedArticle(existedArticle) {
       this.editmode = true;
@@ -66,6 +67,14 @@ export default {
       this.article.title = existedArticle.title;
       this.article.date = existedArticle.date;
       this.article.content = existedArticle.content;
+    },
+    editArticle(article) {
+      this.editArticleAction(article).then(response => {
+        this.article.title = "";
+        this.article.date = "";
+        this.article.content = "";
+        response;
+      })
     }
   }
   

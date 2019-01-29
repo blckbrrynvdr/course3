@@ -31,6 +31,15 @@ const articles = {
     fetch({commit}, article) {
       this.$axios.get('/posts/69').then(response => {
         commit('fillUpArticles', response.data);
+        
+        for (let i = 0; i < response.data.length; i++) {
+          const element = response.data[i];
+
+          const date = new Date(element.date * 1000);
+          
+          console.log(('0' + date.getUTCDate()).slice(-2) + '/' + ('0' + date.getUTCMonth() + '1').slice(-2) + '/' + date.getFullYear());
+        }
+        
       })
     },
     remove({ commit }, id) {
@@ -49,7 +58,7 @@ const articles = {
 
       
       this.$axios.post(`/posts/${article.id}`, formData).then(response => {
-        commit('editArticle', response.data.article)
+        commit('editArticle', response.data.post)
       });
     }
   }
