@@ -25,6 +25,8 @@ const routes = [
   }
 ];
 const router = new VueRouter({ routes });
+
+
 const guard = axios.create({
   baseURL: "http://localhost:8080"
 })
