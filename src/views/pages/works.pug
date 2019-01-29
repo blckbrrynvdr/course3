@@ -28,8 +28,9 @@ block content
             .user__desc Личный сайт разработчика
 
     .hero__arrow-down
-      a(href="#") 
+      a(href="#").scroll-trigger 
         +icon('arrow_down', 'hero__arrow-pic')
+
 
     +triangle('triangles--works')
 
@@ -37,11 +38,12 @@ block content
       img(src="./assets/images/backgrounds/mountains.jpg", alt="", srcset="")
 
   section.works 
-    .works__title
+    .works__title 
       +title ('Мои работы', 'works_header')
     #slider-component 
-
-  section.comments
+    
+  scroll-container
+    section.comments
     .comments__bg
       img(src="./assets/images/backgrounds/water.jpg").comments__bg-pic
     .comments__title  
@@ -88,7 +90,7 @@ block content
             button.close-modal(@click="closeModal") X
     
     .comments__arrow
-      a(href="#") 
+      a(href="#").scroll-target
         +icon('arrow_down', 'arrow_up')
 
 block scripts

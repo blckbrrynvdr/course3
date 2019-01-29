@@ -32,15 +32,29 @@ const sideB = {
   },
   methods: {
     login() {
-      axios.post("https://webdev-api.loftschool.com/login", this.user).then(response => {
-        if (response.status === 200) {
-          const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
-          localStorage.setItem("token", response.data.token);
-          localStorage.setItem("ttl", ttl);
+      // axios.post("https://webdev-api.loftschool.com/login", this.user).then(response => {
+      //   if (response.status === 200) {
+      //     const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+      //     localStorage.setItem("token", response.data.token);
+      //     localStorage.setItem("ttl", ttl);
           
-          console.log(response.data.token);
+      //     console.log(response.data.token);
           
-          // window.location.href = "/admin";
+      //     // window.location.href = "/admin";
+
+      axios.post("https://webdev-api.loftschool.com/login", this.user).then(
+        response => {
+          if (response.status === 200) {
+            const token = response.data.token;
+            const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+            localStorage.setItem("token", token);
+            localStorage.setItem("ttl", ttl);
+            
+            console.log('успешная авторизация');
+
+            // appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
+
+            window.location.href = "/admin";
         }
       })
       .catch( error => {
