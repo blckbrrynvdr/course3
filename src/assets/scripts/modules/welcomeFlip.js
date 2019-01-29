@@ -54,7 +54,7 @@ const sideB = {
 
             // appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
 
-            window.location.href = "/admin";
+            window.location.href = "/course3/dist/admin";
         }
       })
       .catch( error => {
