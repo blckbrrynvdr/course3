@@ -5,7 +5,8 @@
       .blog__fields
         h5 Добавить запись
         input(type="text" placeholder="Название" v-model="article.title")
-        input(type="date" placeholder="Дата" v-model="article.date")
+        label {{article.date}}
+          input(type="date" placeholder="Дата" v-model="article.date")
         textarea(v-model="article.content").textarea
         button(
           type="button"
@@ -21,8 +22,9 @@
             td
           tr(v-for="article in articles")
             td  {{article.title}}
-            td  {{article.date}}
-            td  {{article.content}}
+            td  {{convertDate(article.date)}}
+            td
+              .td-content__wrapper  {{article.content}}
             td
               button(type="button" @click="editExistedArticle(article)").edit-btn ✎
               button(type="button" @click="removeArticle(article.id)").delete-btn X
@@ -52,7 +54,6 @@ export default {
   },
   created() {
     this.fetchArticles();
-    
   },
   methods: {
     ...mapActions({
@@ -63,10 +64,22 @@ export default {
     }),
     editExistedArticle(existedArticle) {
       this.editmode = true;
+      const element = this.article.date;
+      const date = new Date(element * 1000);
+      var newDate = (
+        date.getFullYear() + '-' +
+        ('0' + date.getUTCMonth() + '1').slice(-2) + '-' +
+        ('0' + date.getUTCDate()).slice(-2)
+      );
+  
+
+
       this.article.id = existedArticle.id;
       this.article.title = existedArticle.title;
-      this.article.date = existedArticle.date;
+      this.newDate = existedArticle.date;
       this.article.content = existedArticle.content;
+      console.log(newDate);
+      
     },
     editArticle(article) {
       this.editArticleAction(article).then(response => {
@@ -75,6 +88,27 @@ export default {
         this.article.content = "";
         response;
       })
+    },
+    convertDate(timestamp) {
+      const date = new Date(timestamp * 1000);
+      const year = date.getFullYear();
+      const months = [
+        'января',
+        'февраля',
+        'марта',
+        'апреля',
+        'мая',
+        'июня',
+        'июля',
+        'августа',
+        'сентября',
+        'октября',
+        'ноября',
+        'декабря'];
+      const month = months[date.getMonth()];
+      const day = date.getDate();
+      const convertedDate = day + ' ' + month + ' ' + year;
+      return convertedDate;
     }
   }
   
@@ -135,5 +169,12 @@ export default {
     tr td:last-child {
     border-right: none;
     }
+  }
+  .td-content__wrapper {
+    overflow: overlay;
+    width: 174px;
+    height: 85px;
+    white-space: pre-wrap;
+    text-align: left;
   }
 </style>

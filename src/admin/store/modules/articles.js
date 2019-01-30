@@ -37,7 +37,7 @@ const articles = {
 
           const date = new Date(element.date * 1000);
           
-          console.log(('0' + date.getUTCDate()).slice(-2) + '/' + ('0' + date.getUTCMonth() + '1').slice(-2) + '/' + date.getFullYear());
+          console.log(('0' + date.getUTCDate()).slice(-2) + '.' + ('0' + date.getUTCMonth() + '1').slice(-2) + '.' + date.getFullYear());
         }
         
       })
