@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import axios from 'axios';
 
 const articlesMenu = {
   template: "#articles-menu",
@@ -11,6 +12,29 @@ const articlesContent = {
   template: "#articles-content",
   props: {
     articles: Array
+  },
+  methods: {
+    convertDate(timestamp) {
+      const date = new Date(timestamp * 1000);
+      const year = date.getFullYear();
+      const months = [
+        'января',
+        'февраля',
+        'марта',
+        'апреля',
+        'мая',
+        'июня',
+        'июля',
+        'августа',
+        'сентября',
+        'октября',
+        'ноября',
+        'декабря'];
+      const month = months[date.getMonth()];
+      const day = date.getDate();
+      const convertedDate = day + ' ' + month + ' ' + year;
+      return convertedDate;
+    }
   }
 }
 
@@ -26,9 +50,12 @@ new Vue ({
     }
   },
   created() {
-    this.articles = require('../../../data/articles.json');
+    axios.get("https://webdev-api.loftschool.com/posts/69").then(response => {
+      this.articles = response.data;
+    });
+    // this.articles = require('../../../data/articles.json');
   },
-  mounted() {
+  updated() {
     this.$nextTick(function (){
       const blogList = document.querySelector(".blog__menu-list");
       const articles = document.querySelectorAll(".blog__article");

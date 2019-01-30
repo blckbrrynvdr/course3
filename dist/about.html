@@ -86,6 +86,7 @@
           </div>
           <div class="hero__bg"><img src="./assets/images/backgrounds/mountains.jpg" alt="" srcset=""></div>
         </section>
+        <div class="slider-target"></div>
         <section class="about">
           <div class="about__col about__col--background-gray">
             <div class="about__left-title">
@@ -216,17 +217,17 @@
       </footer>
       <script type="text/x-template" id="skills-list">   
         <ul class="skills-list">
-          <li class="skills-list__item" v-for="skillsGroupObj in skills">
-            <skills-row :skillsGroupObj="skillsGroupObj"></skills-row>
+          <li class="skills-list__item" v-for="type in types">
+            <skills-row :skills="skills" :type="type"></skills-row>
           </li>
         </ul>
       </script>
       <script type="text/x-template" id="skills-item">
         <div class="skills-row">
-          <div class="skills-list__title">{{skillsGroupObj.skillsGroup}}</div>
+          <div class="skills-list__title">{{type.name}}</div>
           <ul class="skills">
-            <li class="skill-list__item" v-for="(skillPercentage, skillTitle) in skillsGroupObj.skills">
-              <skill :skillPercentage="skillPercentage" :skillTitle="skillTitle"></skill>
+            <li class="skill-list__item" v-for="skill in skills" v-if="skill.category === type.id">
+              <skill :skill="skill"></skill>
             </li>
           </ul>
         </div>
@@ -237,22 +238,22 @@
             <circle class="skill__circle skill__circle_under" cx="50" cy="50" r="40"></circle>
             <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
           </svg>
-          <div class="skill__title">{{skillTitle}}</div>
+          <div class="skill__title">{{skill.title}}</div>
         </div>
       </script>
       <script type="text/x-template" id="slider-root">
         <div class="slider"> 
           <info :work="currentWork"></info>
           <display :work="currentWork"></display>
-          <btns :works="works" :index="currentIndex" @slide="handleSlide"></btns>
+          <btns :works="works" :currentIndex="currentIndex" @slide="handleSlide"></btns>
         </div>
       </script>
       <script type="text/x-template" id="slider-info">
         <div class="slider__info-container">
           <div class="slider__info">
             <div class="slider__info-title">
-              <h3>{{work.title}}</h3>
-              <div class="slider__info-skills">{{work.skills}}</div>
+              <h3 :key="work.title">{{work.title}}</h3>
+              <div class="slider__info-skills" :key="work.techs">{{work.techs}}</div>
               <div class="slider__info-button"><a class="btn coral__btn" :href="work.link">
                   <svg class="works__btn-pic">
                     <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
@@ -262,7 +263,7 @@
         </div>
       </script>
       <script type="text/x-template" id="slider-display">
-        <div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
+        <div class="slider__display" :key="work.photo"><img class="slider__big-pic" :src="work.photo" alt=""></div>
       </script>
       <script type="text/x-template" id="slider-btns">
         <div class="slider__buttons">
@@ -271,7 +272,7 @@
                 <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
               </svg></a>
             <div class="slider__button-container">
-              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
+              <div class="slider__button-img-wrap" :key="transformWorksArrForBtn('prev').photo"><img class="slider__button-pic" :src="transformWorksArrForBtn('prev').photo" alt=""></div>
             </div>
           </div>
           <div class="slider__button slider__button_next" @click="slide('next')"><a class="slider__arrow slider__arrow--next">
@@ -279,7 +280,7 @@
                 <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
               </svg></a>
             <div class="slider__button-container">
-              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
+              <div class="slider__button-img-wrap" :key="transformWorksArrForBtn('next').photo"><img class="slider__button-pic" :src="transformWorksArrForBtn('next').photo" alt=""></div>
             </div>
           </div>
         </div>
@@ -407,17 +408,17 @@
         <aside class="blog__menu">
           <div class="blog__button hidden"></div>
           <ul class="blog__menu-list blog__menu-list--absolute">
-            <li class="blog__menu-item" v-for="article in articles"><a class="blog__link" href="#" :data-name="article.name">{{article.title}}</a></li>
+            <li class="blog__menu-item" v-for="article in articles"><a class="blog__link" href="#" :data-name="article.title">{{article.title}}</a></li>
           </ul>
         </aside>
       </script>
       <script type="text/x-template" id="articles-content">
         <div class="blog__content">
-          <article class="blog__article" v-for="article in articles" :data-name="article.name">
+          <article class="blog__article" v-for="article in articles" :data-name="article.title">
             <div class="blog__content-title">
               <h3 class="subtitle">{{ article.title }}</h3>
             </div>
-            <div class="blog__content-date">{{ article.date }}</div>
+            <div class="blog__content-date">{{ convertDate(article.date) }}</div>
             <div class="blog__content-text"> 
               <p>{{ article.text }}</p>
             </div>

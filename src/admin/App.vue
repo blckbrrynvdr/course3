@@ -4,22 +4,22 @@
     tabs
     .content
       router-view
-      .user
-        form
-          input(
-            type="text"
-            placeholder="login"
-            v-model="user.name"
-            ) 
-          input(
-            type="password"
-            placeholder="password"
-            v-model="user.password"
-            )
-          button(
-            type="button"
-            @click="sendData"
-            ) Отправить
+    .user
+      form
+        input(
+          type="text"
+          placeholder="login"
+          v-model="user.name"
+          ) 
+        input(
+          type="password"
+          placeholder="password"
+          v-model="user.password"
+          )
+        button(
+          type="button"
+          @click="sendData"
+          ) Отправить
 
 </template>
 

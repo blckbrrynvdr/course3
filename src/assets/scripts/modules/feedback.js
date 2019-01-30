@@ -49,7 +49,8 @@ new Vue({
     },
     clearSubmit() {
       this.name = '';
-      this.mail = ''
+      this.mail = '';
+      this.message = '';
     },
     closeModal() {
         this.activateModal = true;

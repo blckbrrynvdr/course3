@@ -28,15 +28,15 @@ const router = new VueRouter({ routes });
 
 
 const guard = axios.create({
-  baseURL: "http://localhost:8080"
-})
+  baseURL: "https://webdev-api.loftschool.com/"
+});
 
 router.beforeEach((to,from,next) => {
 
-  const isUserAuthorized = store.state.user.isAuth;
+  // const isUserAuthorized = store.state.user.isAuth;
 
   
-if (isUserAuthorized === false) {
+// if (isUserAuthorized === false) {
   guard.get('/user', {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -49,9 +49,9 @@ if (isUserAuthorized === false) {
     localStorage.removeItem('token');
 
   })
-} else {
-  next();
-}
+// } else {
+//   next();
+// }
   
 })
 

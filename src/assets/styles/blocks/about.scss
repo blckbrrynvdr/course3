@@ -53,8 +53,8 @@
 .about__left-subtitle {
     margin-bottom: 35px;
     padding: 0 30%;
-    @include tablets {
-        padding: 0 160px;
+    @include laptop {
+        padding: 0;
     }
     @include phones {
         padding: 0;

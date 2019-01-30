@@ -34,8 +34,8 @@
 .skills {
     display: flex;
     flex-wrap: wrap;
-    @include phones {
-    justify-content: space-around;
+    @include tablets {
+        justify-content: space-around;
     }
 }
 

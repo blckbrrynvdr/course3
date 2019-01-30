@@ -8,7 +8,7 @@ script(type="text/x-template")#slider-root
     )
     btns(
       :works="works",
-      :index="currentIndex"
+      :currentIndex="currentIndex"
       @slide="handleSlide"
     )
 
@@ -16,15 +16,15 @@ script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info
       .slider__info-title
-        h3 {{work.title}}
-        .slider__info-skills {{work.skills}}
+        h3(:key="work.title") {{work.title}}
+        .slider__info-skills(:key="work.techs") {{work.techs}}
         .slider__info-button
           a(:href="work.link").btn.coral__btn
             +icon('link','works__btn-pic')
             |Посмотреть сайт  
 
 script(type="text/x-template")#slider-display
-  .slider__display
+  .slider__display(:key="work.photo")
     img(:src="work.photo", alt="").slider__big-pic
 
 script(type="text/x-template")#slider-btns
@@ -33,11 +33,11 @@ script(type="text/x-template")#slider-btns
       a.slider__arrow.slider__arrow--prev
         +icon('arrow_down','arrow_up')
       div.slider__button-container
-        div.slider__button-img-wrap
-          img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
+        div.slider__button-img-wrap(:key="transformWorksArrForBtn('prev').photo")
+          img(:src="transformWorksArrForBtn('prev').photo", alt="").slider__button-pic
     .slider__button.slider__button_next(@click="slide('next')")
       a.slider__arrow.slider__arrow--next
         +icon('arrow_down','arrow_up')
       div.slider__button-container
-        div.slider__button-img-wrap
-          img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic
+        div.slider__button-img-wrap(:key="transformWorksArrForBtn('next').photo")
+          img(:src="transformWorksArrForBtn('next').photo", alt="").slider__button-pic

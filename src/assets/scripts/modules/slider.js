@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from 'axios';
 
 const info = {
   template: "#slider-info",
@@ -18,27 +19,17 @@ const btns = {
   template: "#slider-btns",
   props: {
     works: Array,
-    index: Number
-  },
-  data() {
-    return {
-      prevButtonWorks: [],
-      nextButtonWorks: []
-    };
-  },
-  created() {
-    this.prevButtonWorks = this.transformWorksArrForBtn('prev');
-    this.nextButtonWorks = this.transformWorksArrForBtn('next');
+    currentIndex: Number
   },
   methods: {
     slide(direction) {
       this.$emit('slide', direction);
     },
-    transformWorksArrForBtn(btnDirection) {
+    transformWorksArrForBtn(direction) {
       const worksArray = [...this.works];
       const lastItem = worksArray[worksArray.length - 1];
 
-      switch (btnDirection) {
+      switch (direction) {
         case "next":
           worksArray.push(worksArray[0]);
           worksArray.shift();
@@ -50,7 +41,7 @@ const btns = {
         break;
       }
 
-      return worksArray;
+      return worksArray[this.currentIndex];
     }
   }
 };
@@ -62,36 +53,40 @@ new Vue ({
     display,
     btns
   },
-  data() {
-    return {
+  data: {
       works: [],
+      currentWork: {},
       currentIndex: 0
-    }
-  },
-  computed: {
-    currentWork() {
-      return this.works[this.currentIndex]
-    }
   },
   watch: {
     currentIndex(value) {
-      this.makeInfiniteSliding(value);
-     }
+      const worksAmount = this.works.length - 1;
+      if (value > worksAmount) this.currentIndex = 0;
+      if (value < 0) this.currentIndex = worksAmount;
+
+      this.currentWork = this.works[value];
+    }
   },
   created() {
-    this.works = require('../../../data/works.json'); 
+    axios.get("https://webdev-api.loftschool.com/works/69").then(response => {
+      
+        
+      for (let work of response.data) {
+        let obj = new Object();
+        obj.id = work.id;
+        obj.title = work.title;
+        obj.techs = work.techs;
+        obj.photo = `https://webdev-api.loftschool.com/${work.photo}`;
+        obj.link = work.link;
+        this.works.push(obj);
+      }
+      this.currentWork = this.works[0];
+  });
+    // this.works = require('../../../data/works.json'); 
+      this.currentWork = this.works[0];
+    
   },
   methods: {
-    makeInfiniteSliding(value) {
-      const worksAmountMinusOne = this.works.length - 1;
-      if (value > worksAmountMinusOne) {
-        this.currentIndex = 0
-      }
-
-      if (value < 0) {
-        this.currentIndex = worksAmountMinusOne
-      }
-    },
     handleSlide(direction) {
       switch(direction) {
         case "next":

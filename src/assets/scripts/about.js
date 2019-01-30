@@ -5,5 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 import "./modules/hamburgermenu";
 import "./modules/parallaxScroll";
 import "./modules/skills";
+import "./modules/skroll"
 // import "./modules/map";
 
