@@ -85,7 +85,7 @@ export default {
 <style lang="scss">
   body, html {
     margin: 0;
-    height: 100%;
+    // height: 100%;
   }
   body {
     font-family: 'Roboto', Helvetica, sans-serif;
@@ -123,11 +123,14 @@ export default {
 
   .wrapper {
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
   .container {
     height: 100%;
-    background: url(./images/admin-bg.png) center center/cover no-repeat;
+    background: url(./images/admin-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .content {
     padding: 0 20px;
