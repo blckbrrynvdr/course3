@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="./assets/styles/main.min.css">
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__pic">
+         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+<g class="preloader__group preloader__group--top">
+<circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" enable-background="new    " cx="72" cy="71.999" r="70"/>
+</g>
+<g class="preloader__group preloader__group--mid">
+<circle opacity="0.7" fill="none" stroke="#FFFFFF" stroke-width="3.8938" stroke-miterlimit="10" enable-background="new    " cx="72" cy="72" r="55"/>
+</g>
+<g class="preloader__group preloader__group--bot">
+<circle fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="72" r="40"/>
+</g>
+<text class="preloader__text" transform="matrix(1 0 0 1 51.5391 79.0127)" fill="#FFFFFF" font-family="'ArialMT'" font-size="24">0</text>
+</svg>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="maincontent">
         <section class="hero hero--blog">
@@ -27,19 +43,24 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="hero__menu"><a class="hamburger" href="#" id="open">
-              <div class="hamburger__planks"></div></a></div>
-          <div class="overlay" id="overlay">
-            <div class="overleft"></div>
-            <div class="overright"></div>
-            <nav class="overlay-menu">
-              <ul class="overlay-menu__list">
-                <li class="overlay-menu__item"><a class="overlay-menu--link" href="works.html">Мои работы </a></li>
-                <li class="overlay-menu__item"><a class="overlay-menu--link" href="blog.html">Блог  </a></li>
-                <li class="overlay-menu__item"><a class="overlay-menu--link" href="about.html">Обо мне</a></li>
-                <li class="overlay-menu__item"><a class="overlay-menu--link" href="index.html">Авторизация  </a></li>
-              </ul>
-            </nav>
+          <div class="hero__menu" id="fullscreen-menu" :class="{'hero__menu--open' : changed}">
+            <div class="hamburger hamburger--squeeze" @click="handleChange" :class="{'is-active' : changed}">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overleft"></div>
+              <div class="overright"></div>
+              <nav class="overlay-menu">
+                <ul class="overlay-menu__list">
+                  <li class="overlay-menu__item"><a class="overlay-menu--link" href="works.html">Мои работы</a></li>
+                  <li class="overlay-menu__item"><a class="overlay-menu--link" href="about.html">Обо мне</a></li>
+                  <li class="overlay-menu__item"><a class="overlay-menu--link" href="blog.html">Блог</a></li>
+                  <li class="overlay-menu__item"><a class="overlay-menu--link" href="index.html">Авторизация</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
           <div class="hero__content">
             <div class="hero__user-desc">
@@ -51,7 +72,7 @@
                 <div class="user__info">
                   <div class="main__title">
                     <h1>Блог</h1>
-                    <svg class="title__background-image">
+                    <svg class="title__background-image title-img">
                       <use xlink:href="./assets/images/icons/sprite.svg#blog_header"></use>
                     </svg>
                   </div>
@@ -68,27 +89,9 @@
             <div class="triangle triangle--left"></div>
             <div class="triangle triangle--right"></div>
           </div>
+          <div class="hero__bg"><img src="./assets/images/backgrounds/mountains.jpg" alt="" srcset=""></div>
         </section>
-        <section class="blog"> 
-          <aside class="blog__menu">
-            <ul class="blog__menu-list">
-              <li class="blog__menu-item blog__menu-item--active">Самое важное в SASS</li>
-              <li class="blog__menu-item">Приёмы в вёрстке, без которых не обходится ни один сайт</li>
-              <li class="blog__menu-item">Самый необходимый набор Gulp плагинов</li>
-              <li class="blog__menu-item">Почему я выбрал Jade</li>
-            </ul>
-          </aside>
-          <div class="blog__content">
-            <div class="blog__content-title">
-              <h3 class="subtitle">Самое важное в SASS</h3>
-            </div>
-            <div class="blog__content-date">22 ноября 2016</div>
-            <div class="blog__content-text"> 
-              <p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
-              <p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
-            </div>
-          </div>
-        </section>
+        <div id="articles-component"></div>
       </div>
       <footer class="footer">
         <div class="footer__row">
@@ -121,12 +124,12 @@
           <div class="footer__col">
             <div class="footer__text text-content">
               <p>
-                Я веб-разработчик из Новосибирска, и этот сайт я сделалв рамках обучения в Школе онлайн образования LoftSchool. </p>
+                Я веб-разработчик из Тулы, и этот сайт я сделалв рамках обучения в Школе онлайн образования LoftSchool. </p>
             </div>
           </div>
           <div class="footer__col footer__col--justify-end">
             <div class="footer__text text-content">
-              <p>© Владимир Астахов | создано с любовью в LoftSchool | 2016</p>
+              <p>© Артур Врублевский | создано с любовью в LoftSchool | 2019</p>
             </div>
           </div>
         </div>
@@ -155,6 +158,191 @@
             <circle class="skill__circle skill__circle_above" cx="50" cy="50" r="40" ref="circle"></circle>
           </svg>
           <div class="skill__title">{{skillTitle}}</div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-root">
+        <div class="slider"> 
+          <info :work="currentWork"></info>
+          <display :work="currentWork"></display>
+          <btns :works="works" :index="currentIndex" @slide="handleSlide"></btns>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-info">
+        <div class="slider__info-container">
+          <div class="slider__info">
+            <div class="slider__info-title">
+              <h3>{{work.title}}</h3>
+              <div class="slider__info-skills">{{work.skills}}</div>
+              <div class="slider__info-button"><a class="btn coral__btn" :href="work.link">
+                  <svg class="works__btn-pic">
+                    <use xlink:href="./assets/images/icons/sprite.svg#link"></use>
+                  </svg>Посмотреть сайт  </a></div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script type="text/x-template" id="slider-display">
+        <div class="slider__display"><img class="slider__big-pic" :src="work.photo" alt=""></div>
+      </script>
+      <script type="text/x-template" id="slider-btns">
+        <div class="slider__buttons">
+          <div class="slider__button" @click="slide('prev')"><a class="slider__arrow slider__arrow--prev">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="prevButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
+          <div class="slider__button slider__button_next" @click="slide('next')"><a class="slider__arrow slider__arrow--next">
+              <svg class="arrow_up">
+                <use xlink:href="./assets/images/icons/sprite.svg#arrow_down"></use>
+              </svg></a>
+            <div class="slider__button-container">
+              <div class="slider__button-img-wrap"><img class="slider__button-pic" :src="nextButtonWorks[index].photo" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script type="text/x-template" id="welcome-page">
+        <div class="welcome">
+          <transition name="fade">
+            <authBtn @side-change="handleSideChange" :activeSide="activeSide" v-show="activeSide === 'sideA'"></authBtn>
+          </transition>
+          <div class="welcome__panel">
+            <transition name="flip" mode="out-in">
+              <component :is="activeSide" @side-change="handleSideChange"></component>
+            </transition>
+          </div>
+          <div class="welcome__desc">
+            <p>© Артур Врублевский | создано с любовью в LoftSchool | 2019</p>
+          </div>
+        </div>
+      </script>
+      <script type="text/x-template" id="auth-btn">
+        <div class="auth">
+          <button class="btn auth__btn" @click="$emit('side-change')">Авторизоваться</button>
+        </div>
+      </script>
+      <script type="text/x-template" id="side-a">   
+        <div class="welcome__panel-user">
+          <div class="user">
+            <div class="user__pic-container">
+              <div class="user__pic"><img class="user__pic-img" src="./assets/images/avatar.png" alt="user avatar"/>
+              </div>
+            </div>
+            <div class="user__info">
+              <div class="user__name">Артур Врублевский</div>
+              <div class="user__desc">Личный сайт разработчика</div>
+            </div>
+          </div>
+          <ul class="socials">
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="./assets/images/icons/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+          <div class="welcome__panel-buttons"><a class="btn route__btn" href="works.html">Мои работы</a><a class="btn route__btn" href="about.html">Обо мне</a><a class="btn route__btn" href="blog.html">Блог</a></div>
+        </div>
+      </script>
+      <script type="text/x-template" id="side-b">     
+        <div class="welcome__auth">
+          <div class="welcome__auth-title">
+            <div class="main__subtitle">
+              <h3 class="undefined">Авторизуйтесь</h3>
+            </div>
+          </div>
+          <form class="auth__form" id="auth__form">
+            <label class="auth__form-row">
+              <input class="auth__form-input" placeholder="Логин" name="login" v-model="login" @input="clearInput">
+              <div class="auth__form-logo">
+                <svg class="auth__form-pic">
+                  <use xlink:href="./assets/images/icons/sprite.svg#login"></use>
+                </svg>
+              </div>
+              <transition name="fade">
+                <div class="error error--login" v-if="!loginVerify">{{ errorLogin }}</div>
+              </transition>
+            </label>
+            <label class="auth__form-row">
+              <input class="auth__form-input" placeholder="Пароль" name="pass" v-model="pass" @input="clearInput">
+              <div class="auth__form-logo">
+                <svg class="auth__form-pic">
+                  <use xlink:href="./assets/images/icons/sprite.svg#password"></use>
+                </svg>
+              </div>
+              <transition name="fade">
+                <div class="error error--pass" v-if="!passVerify">{{ errorPass }}</div>
+              </transition>
+            </label>
+            <label class="auth-form__check-label">
+              <input class="auth-form__check" type="checkbox" value="human" v-model="human">
+              <div class="auth-form__check-block">
+                <svg class="auth-form__check-svg">
+                  <use xlink:href="./assets/images/icons/sprite.svg#check"></use>
+                </svg>
+              </div>
+              <p>Я человек</p>
+            </label>
+            <div class="auth-form__quest">Вы точно не робот?</div>
+            <div class="auth__form-row auth__form-row--margin-bottom">
+              <label class="auth-form__radio-label">
+                <input class="auth-form__radio" type="radio" name="human-check" value="human-yes" v-model="picked">
+                <div class="auth-form__custom-radio"></div>Да
+              </label>
+              <label class="auth-form__radio-label">
+                <input class="auth-form__radio" type="radio" name="human-check" value="human-no" v-model="picked">
+                <div class="auth-form__custom-radio"></div>Не уверен
+              </label>
+            </div>
+            <div class="welcome__auth-buttons">
+              <button class="btn route__btn auth__back" @click.prevent="$emit('side-change')">На главную</button>
+              <button class="btn route__btn auth__submit" type="submit" @click.prevent="submit" @click="$emit('activate-modal')">Войти</button>
+            </div>
+          </form>
+          <transition name="fade">
+            <div class="modal-wrapper" v-if="!activateModal">
+              <div class="modal">{{ humanText }}
+                <button class="close-modal" @click="closeModal">X</button>
+              </div>
+            </div>
+          </transition>
+        </div>
+      </script>
+      <script type="text/x-template" id="articles">
+        <section class="blog">
+          <articles-menu :articles="articles"></articles-menu>
+          <articles-content :articles="articles"></articles-content>
+        </section>
+      </script>
+      <script type="text/x-template" id="articles-menu">
+        <aside class="blog__menu">
+          <div class="blog__button hidden"></div>
+          <ul class="blog__menu-list blog__menu-list--absolute">
+            <li class="blog__menu-item" v-for="article in articles"><a class="blog__link" href="#" :data-name="article.name">{{article.title}}</a></li>
+          </ul>
+        </aside>
+      </script>
+      <script type="text/x-template" id="articles-content">
+        <div class="blog__content">
+          <article class="blog__article" v-for="article in articles" :data-name="article.name">
+            <div class="blog__content-title">
+              <h3 class="subtitle">{{ article.title }}</h3>
+            </div>
+            <div class="blog__content-date">{{ article.date }}</div>
+            <div class="blog__content-text"> 
+              <p>{{ article.text }}</p>
+            </div>
+          </article>
+          <div class="blankspace"></div>
         </div>
       </script>
     </div>

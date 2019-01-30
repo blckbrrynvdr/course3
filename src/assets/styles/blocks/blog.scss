@@ -1,6 +1,5 @@
 .hero.hero--blog {
-    height: 400px;
-    margin-bottom: 66px;
+    height: 60vh;
     background-position-y: 25%;
     .hero__arrow-down {
         display: none;
@@ -9,31 +8,86 @@
         }
     }
     @include tablets {
-        height: 550px;
+        height: 548px;
     }
     @include phones {
         height: 550px;
         margin-bottom: 25px;
+    }
+    .hero__bg {
+        top: -35%;
+        @include laptop {
+            top: -40%;
+        }
     }
 }
 
 .blog {
     display: flex;
     margin-bottom: 60px;
+    position: relative;
+    @include tablets {
+        margin-bottom: 0;
+    }
 }
 
 .blog__menu {
     min-width: 25%;
     margin-right: 116px;
+    padding-top: 63px;
+    position: relative;
+    transition: $transition;
     @include tablets {
-        display: none;
+        width: 80%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $coral;
+        z-index: 5;
+        transform: translateX(-100%);
+        &--active {
+            transform: translatex(0%);
+        }
     }
 }
 
 .blog__menu-list {
     text-align: right;
-    padding-left: 30%;
     padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: $transition;
+    @include laptop {
+        padding-left: 20px;
+    }
+    @include tablets {
+        
+    }
+    &--absolute {
+        position: absolute;
+        top: 3%;
+        @include tablets {
+            width: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &--fixed {
+        position: fixed;
+        top: 0;
+        width: 25%;
+        @include laptop {
+            width: 25%;
+        }
+        @include tablets {
+            width: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 }
 
 .blog__menu-item {
@@ -43,19 +97,50 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 70%;
+    @include tablets {
+        width: 100%;
+    }
+    .blog__link {
+        color: #000;
+        @include tablets {
+            color: #FFF;
+            opacity: .6;
+        }
+    }
     &--active {
-        color: $coral;
         border-right: 3px solid $coral;
+        .blog__link {
+            color: $coral;
+            @include tablets {
+                color: #FFF;
+                opacity: 1;
+                font-weight: 600;
+            }
+        }
+    }
+    @include laptop {
+        width: 100%;
     }
 }
 
 .blog__content {
     padding-right: 20%;
     @include laptop {
-        padding-right: 10%;
+        padding-right: 90px;
     }
     @include tablets {
         padding: 0 20px;
+    }
+}
+
+.blog__article {
+    padding: 64px 0;
+    @include tablets {
+        padding: 50px 0;
+    }
+    @include phones {
+        padding: 25px 0;
     }
 }
 
@@ -69,4 +154,31 @@
 .blog__content-date {
     margin-bottom: 25px;
     color: $coral;
+}
+
+.blog__content-text {
+    p {
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.blog__button {
+    visibility: hidden;
+    @include tablets {
+        visibility: visible;
+        position: absolute;
+        right: -1%;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        transform: translateY(-50%);
+        background-color: $coral;
+    }
+    @include phones {
+        right: -3%;
+    }
 }

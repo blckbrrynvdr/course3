@@ -9,8 +9,12 @@
     position: relative;
     min-height: 650px;
     z-index: 2;
+    position: relative;
+    @include laptop {
+        min-height: initial;
+    }
     @include tablets {
-        justify-content: flex-end;
+        justify-content: center;
         background: url(../../assets/images/backgrounds/mountains.png) center center / cover no-repeat;
     }
     @include phones {
@@ -23,25 +27,52 @@
 .welcome__panel {
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 150px;
+    transition: transform 1s ease-out;
+    position: relative;
+    &--sideA {
+        .welcome__auth {
+            display: none;
+        }
+        .welcome__auth-buttons {
+            display: none;
+        }
+    }
+    &--sideB {
+        .welcome__auth {
+            display: block;
+        }
+        .welcome__auth-buttons {
+            display: flex;
+        }
+        .welcome__panel-user {
+            display: none;
+        }
+        .welcome__panel-buttons {
+            display: none;
+        }
+    }
     @include laptop {
-        margin-top: 120px;
-        margin-bottom: 90px;
     }
     @include tablets {
-        margin-bottom: 250px;
     }
     @include phones {
         margin: 30px 0;
-
+        max-width: 310px;
+        position: absolute;
+        top: 46%;
+        transform: translateY(-50%);
     }
 }
 
+.none {
+    display: none;
+}
+
 .welcome__panel-user {
-    padding: 40px 66px;
+    padding: 40px 0;
     background: rgba(#fff, .85);
+    width: 100%;
     @include phones {
-        padding: 30px;
     }
     .user {
         color: $text;
@@ -66,13 +97,21 @@
 .welcome__desc {
     color: #fff;
     font-weight: 300;
+    position: absolute;
+    bottom: 3%;
     @include tablets {
-        padding-bottom: 25px;
     }
     @include phones {
-        padding-bottom: 0;
+        position: absolute;
+        bottom: 1%;
         text-align: center;
     }
+}
+
+.welcome__panel-buttons {
+    position: relative;
+    bottom: -40px;
+    width: 100%;
 }
 
 .auth {
@@ -83,4 +122,40 @@
         position: relative;
         right: initial;
     }
+}
+
+.welcome__auth {
+    padding: 33px 20px;
+    background: rgba(#fff, .85);
+    position: relative;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome__auth-title {
+    margin-bottom: 40px;
+}
+
+.welcome__auth-buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    display: flex;
+    .btn {
+        display: block;
+        width: 50%;
+    }
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s linear;
+}
+  
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }

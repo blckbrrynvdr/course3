@@ -1,0 +1,68 @@
+.comments__form {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.comments__form-content {
+  padding: 30px 20px 20px;
+  width: 380px;
+  position: relative;
+  // background: url(../../assets/images/backgrounds/water.jpg) center no-repeat;
+  // filter: blur(20px);
+  @include phones {
+      width: initial;
+  }
+}
+
+.comments__form-blur {
+  background: url(../../assets/images/backgrounds/water.jpg) center no-repeat;
+  filter: blur(20px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.comments__form-title {
+  margin-bottom: 40px;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback__row {
+  display: flex;
+}
+
+.feedback__input {
+  border: none;
+  border-radius: 5px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  &:last-child {
+      margin-bottom: 0;
+  }
+  &--textarea {
+      resize: none;
+      height: 140px;
+  }
+}
+
+.error {
+  
+  &--name{
+    top: 41%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &--mail{
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

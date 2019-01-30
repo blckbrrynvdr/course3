@@ -1,6 +1,6 @@
 .map {
     height: 926px;
-    background: url(../../assets/images/backgrounds/map.png) center center / cover no-repeat;
+    // background: url(../../assets/images/backgrounds/map.png) center center / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,9 +10,15 @@
     }
 }
 
+#google-map {
+    width: 100%;
+    height: 100%;
+}
+
 .map__content {
     padding: 35px 40px;
     background-color: rgba(#FFF, .85);
+    position: absolute;
     @include phones {
         width: 100%;
         padding: 10px;

@@ -1,0 +1,29 @@
+script(type="text/x-template")#articles
+  section.blog
+    articles-menu(
+      :articles="articles"
+      )
+    articles-content(
+      :articles="articles"
+      )
+
+script(type="text/x-template")#articles-menu
+  aside.blog__menu
+    .blog__button.hidden
+    ul.blog__menu-list.blog__menu-list--absolute
+      li.blog__menu-item(v-for="article in articles")
+        a(href="#", :data-name="article.name").blog__link {{article.title}}
+      
+
+script(type="text/x-template")#articles-content
+  .blog__content
+    article.blog__article(
+      v-for="article in articles"
+      :data-name="article.name"
+      )
+      .blog__content-title
+        h3.subtitle {{ article.title }}
+      .blog__content-date {{ article.date }}
+      .blog__content-text 
+        p {{ article.text }}
+    .blankspace

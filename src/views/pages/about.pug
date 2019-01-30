@@ -1,7 +1,7 @@
 extends ../main.layout.pug
 
 block variables
-  - var title = 'Обо мне'
+  - var title = 'Обо мне';
 
 block content
   
@@ -23,7 +23,7 @@ block content
             .user__pic
               +image('avatar.png','user avatar','user__pic-img')
           .user__info
-            .user__name Владимир Астахов
+            .user__name Артур Врублевский
             .user__desc Личный сайт разработчика
 
     .hero__arrow-down
@@ -31,6 +31,9 @@ block content
         +icon('arrow_down', 'hero__arrow-pic')
 
     +triangle('triangles--about')
+
+    .hero__bg
+      img(src="./assets/images/backgrounds/mountains.jpg", alt="", srcset="")
    
   section.about
     
@@ -85,7 +88,7 @@ block content
                 desc:"г.Тула, ул. Фучика, д. 22 к. 1",
                 format:"#"
               }
-            ]
+            ];
 
           each contact in contacts
             li.contacts__item.contacts-row  
@@ -96,6 +99,6 @@ block content
 
 
 block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGl7DXLDTk0t-AKck5guMAY0ZfCySW85Q&callback=initMap" async defer)
   script(src='./assets/scripts/about.bundle.js')
-
 

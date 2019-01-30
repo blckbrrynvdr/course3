@@ -1,0 +1,171 @@
+.slider {
+  height: 100vh;
+  min-height: 650px;
+  background: $gray-light;
+  display: grid;
+  grid-template: 
+    "info display" 70%
+    "info btns" 30%
+    / 1fr 1fr;
+
+  @include tablets {
+    grid-template:
+      "display" 50%
+      "info" 30%
+      "btns" 20%
+      / 1fr;
+  }
+  @include phones {
+    min-height: initial;
+    grid-template:
+      "display" 45%
+      "info" 35%
+      "btns" 20%
+      / 1fr;
+  }
+}
+
+.slider__info-container {
+  grid-area: info;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__info {
+  max-width: 420px;
+  @include tablets {
+    max-width: initial;
+  }
+}
+
+.slider__info-button {
+  display: flex;
+  justify-content: center;
+}
+
+.works__btn-pic {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    margin-right: 11px;
+}
+
+.slider__display {
+  background: $beige;
+  grid-area: display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__buttons{
+  grid-area: btns;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.slider__button {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: $transition;
+  &::before {
+    content: '';
+    background: rgba(182, 180, 174, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+  }
+    &:hover {
+      background: rgba(136, 131, 114, 0.5);
+      .slider__arrow {
+        &--prev{
+          top: 55%;
+        }
+        &--next{
+          top: 45%;
+        }
+      }
+    }
+}
+
+
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: $transition;
+  .arrow_up {
+    width: 43px;
+    height: 27px;
+    transform: rotate(360deg);
+  }
+  &--next {
+    .arrow_up {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.slider__button-container {
+  height: 100%;
+}
+
+.slider__button-img-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.slider__button-pic {
+  max-width: 45%;
+  @include tablets {
+    max-width: 37%;
+  }
+  @include phones {
+    max-width: 50%;
+  }
+}
+
+.slider__info-title {
+  margin-bottom: 40px;
+  @include phones {
+    margin-bottom: initial;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+.slider__info-skills {
+  padding: 20px 0;
+  border-top: 1px solid rgba($coral, .3);
+  border-bottom: 1px solid rgba($coral, .3);
+  text-align: center;
+  color: $coral;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  @include tablets {
+    margin: 0 100px 30px;
+    }
+    @include phones {
+      margin: 0 5px 20px 5px;
+      padding: 7px 0;
+    }
+}
+
+.slider__big-pic {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
