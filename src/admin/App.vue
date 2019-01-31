@@ -85,7 +85,7 @@ export default {
 <style lang="scss">
   body, html {
     margin: 0;
-    // height: 100%;
+    height: 100%;
   }
   body {
     font-family: 'Roboto', Helvetica, sans-serif;
@@ -127,6 +127,7 @@ export default {
   }
   .container {
     height: 100%;
+    min-height: 800px;
     background: url(./images/admin-bg.png);
     background-position: center;
     background-size: cover;

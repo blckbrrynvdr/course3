@@ -44,7 +44,7 @@ router.beforeEach((to,from,next) => {
   }).then(response => {
     next();
   }).catch(error => {
-    alert('Вы не авторизованны!')
+    console.log('Вы не авторизованны!')
     // window.location.href = '/course3/dist';
     localStorage.removeItem('token');
 

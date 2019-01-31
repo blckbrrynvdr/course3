@@ -1,7 +1,7 @@
 <template lang="pug">
   .header
     h1 Панель администрирования
-    a(@click="logout") Вернуться на сайт
+    a(@click="logoutLogout") Вернуться на сайт
 </template>
 
 <script>
@@ -11,7 +11,11 @@ export default {
   methods: {
     ...mapActions({
       logout: 'user/logout'
-    })
+    }),
+    logoutLogout() {
+      // this.logout(user);
+      window.location.href = '/course3/dist';
+    }
   }
 }
 </script>
