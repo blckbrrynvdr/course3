@@ -34,19 +34,7 @@ block content
       img(src="./assets/images/backgrounds/mountains.jpg", alt="", srcset="")
 
   #articles-component
-  
-  form#form-form
-    input(
-          type="text" 
-          placeholder="Логин"
-          v-model="user.name"
-        )
-    input(
-      type="password" 
-      placeholder="Пароль"
-      v-model="user.password"
-    )
-    button.modal-form__button(@click.prevent="login") Войти
+
 
 block scripts
   script(src='./assets/scripts/blog.bundle.js')
